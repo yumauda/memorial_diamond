@@ -1,0 +1,147 @@
+@use "../global" as *;
+
+.p-column {
+  padding-top: rem(60);
+  padding-bottom: rem(60);
+  background: #fff;
+
+  @include mq(md) {
+    padding-top: rem(100);
+    padding-bottom: rem(100);
+  }
+}
+
+.p-column__content {
+  max-width: rem(1100);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.p-column__row {
+  display: flex;
+  flex-direction: column;
+
+  @include mq(md) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.p-column__row + .p-column__row {
+  margin-top: rem(88);
+}
+
+.p-column__row--reverse {
+  @include mq(md) {
+    flex-direction: row-reverse;
+  }
+}
+
+.p-column__row-img {
+  overflow: hidden;
+  line-height: 0;
+
+  @include mq(md) {
+    flex: 0 0 auto;
+    width: rem(580);
+  }
+}
+
+.p-column__row-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 640 / 420;
+}
+
+.p-column__row-body {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-top: rem(24);
+  color: #1f2b3f;
+
+  @include mq(md) {
+    flex: 1 1 auto;
+    margin-top: 0;
+    margin-left: rem(40);
+  }
+}
+
+.p-column__row--reverse .p-column__row-body {
+  @include mq(md) {
+    margin-left: 0;
+    margin-right: rem(40);
+  }
+}
+
+.p-column__row-texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 1 1 auto;
+}
+
+.p-column__row-text {
+  font-family: $base-font-family;
+  font-size: rem(14);
+  font-weight: 400;
+  line-height: 2.2;
+  letter-spacing: 0.08em;
+
+  @include mq(md) {
+    font-size: rem(16);
+    line-height: 2.2;
+  }
+}
+
+.p-column__row-text + .p-column__row-text {
+  margin-top: rem(18);
+
+  @include mq(md) {
+    margin-top: rem(22);
+  }
+}
+
+.p-column__row-titleWrap {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  align-self: flex-start;
+  margin-left: rem(20);
+
+  @include mq(md) {
+    margin-left: rem(32);
+  }
+}
+
+
+.p-column__row-title {
+  writing-mode: vertical-rl;
+  font-family: $base-font-family;
+  font-size: rem(24);
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  line-height: 1;
+
+  @include mq(md) {
+    font-size: rem(32);
+  }
+}
+
+.p-column__row-subtitle {
+  writing-mode: vertical-rl;
+  margin-left: rem(8);
+  font-family: $base-font-family;
+  font-size: rem(11);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: #b89968;
+
+  @include mq(md) {
+    margin-left: rem(12);
+    font-size: rem(13);
+  }
+}

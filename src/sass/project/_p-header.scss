@@ -11,28 +11,28 @@
   right: 0;
   transition: 0.3s ease;
 }
-.p-header.js-header-scroll {
-  background: #fff;
-}
-.p-header .l-inner {
-  height: inherit;
-}
-
-.p-header__content {
-  height: inherit;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: rem(16);
+.p-header__inner {
+  max-width: rem(1350);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $padding-sp;
+  padding-right: $padding-sp;
+  @include mq(md){
+    padding-left: $padding-pc;
+    padding-right: $padding-pc;
+  }
 }
 
 .p-header__logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: rem(112);
+  width: rem(150);
+  margin-top: rem(16);
   @include mq(md){
-    width: rem(157);
+    margin-top: rem(26);
+    width: rem(240);
     
   }
 }

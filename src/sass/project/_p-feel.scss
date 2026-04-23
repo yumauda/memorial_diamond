@@ -1,0 +1,135 @@
+@use "../global" as *;
+
+.p-feel {
+  position: relative;
+  padding-top: rem(80);
+  padding-bottom: rem(80);
+  background: #f6f1e6;
+  overflow: hidden;
+
+  @include mq(md) {
+    padding-top: rem(140);
+    padding-bottom: rem(140);
+  }
+}
+
+.p-feel__content {
+  position: relative;
+  max-width: rem(1200);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.p-feel__img {
+  overflow: hidden;
+  line-height: 0;
+
+  @include mq(md) {
+    position: absolute;
+    z-index: 1;
+  }
+}
+
+.p-feel__img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.p-feel__img--topLeft {
+  width: rem(200);
+  margin-left: rem(-20);
+
+  @include mq(md) {
+    top: rem(200);
+    left: rem(60);
+    width: rem(275);
+    margin-left: 0;
+  }
+}
+
+.p-feel__img--topRight {
+  width: rem(220);
+  margin-top: rem(24);
+  margin-left: auto;
+  margin-right: rem(-20);
+
+  @include mq(md) {
+    top: rem(60);
+    right: rem(40);
+    width: rem(364);
+    margin-top: 0;
+    margin-right: 0;
+  }
+}
+
+.p-feel__img--bottomRight {
+  width: rem(200);
+  margin-top: rem(24);
+  margin-left: auto;
+  margin-right: rem(-20);
+
+  @include mq(md) {
+    top: rem(420);
+    right: rem(80);
+    width: rem(215);
+    margin-top: 0;
+    margin-right: 0;
+  }
+}
+
+.p-feel__title {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: rem(40);
+  color: #1f2b3f;
+  font-family: $base-font-family;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+
+  @include mq(md) {
+    margin-top: rem(60);
+  }
+}
+
+.p-feel__title-row {
+  display: block;
+  writing-mode: vertical-rl;
+  font-feature-settings: "vpal";
+  font-size: rem(22);
+  line-height: 1;
+}
+
+.p-feel__title-row + .p-feel__title-row {
+  margin-right: rem(6);
+
+  @include mq(md) {
+    margin-right: rem(8);
+  }
+}
+
+@include mq(md) {
+  .p-feel__title-row {
+    font-size: rem(32);
+  }
+}
+
+.p-feel__text {
+  margin-top: rem(40);
+  color: #1f2b3f;
+  font-family: $base-font-family;
+  font-size: rem(15);
+  font-weight: 400;
+  line-height: 2.2;
+  letter-spacing: 0.08em;
+  text-align: center;
+
+  @include mq(md) {
+    margin-top: rem(60);
+    font-size: rem(18);
+    line-height: 2.4;
+  }
+}

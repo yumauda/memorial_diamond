@@ -4,12 +4,12 @@
 // インナー幅設定
 ////////////////////
 // コンテンツのインナー幅（最も共通の幅が多い部分）
-$inner: 1200px;
+$inner: 1080px;
 // ※キャンパス幅ではなくインナーの幅を指す
 
 // 余白
 $padding-pc: 25px;
-$padding-sp: 15px;
+$padding-sp: 20px;
 // ※PC時：デザインカンプの余白の幅ではない。PC時は通常25pxで大丈夫！
 
 
@@ -17,7 +17,7 @@ $padding-sp: 15px;
 // フォント設定
 ////////////////////
 
-$base-font-family: "M PLUS 1p", sans-serif;
+$base-font-family: "Shippori Mincho", "Yu Mincho", "YuMincho", serif;
 $second-font-family: "Open Sans", sans-serif;
 // ※検証ツールでしっかり反映されているか確認する
 

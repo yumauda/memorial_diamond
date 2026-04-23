@@ -7,19 +7,11 @@
 @use "./layout/_test";
 
 // Project
-@use "./project/_p-contact";
-@use "./project/_p-detail";
-@use "./project/_p-document";
-@use "./project/_p-down";
-@use "./project/_p-example";
-@use "./project/_p-flow";
+@use "./project/_p-column";
+@use "./project/_p-feel";
 @use "./project/_p-footer";
 @use "./project/_p-header";
 @use "./project/_p-mv";
-@use "./project/_p-site";
-@use "./project/_p-step";
-@use "./project/_p-submit";
-@use "./project/_p-worries";
 
 // Component
 @use "./component/_c-main-text";
