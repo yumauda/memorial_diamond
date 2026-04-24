@@ -4,9 +4,9 @@
 
 // Layout
 @use "./layout/_l-inner";
-@use "./layout/_test";
 
 // Project
+@use "./project/_p-about";
 @use "./project/_p-column";
 @use "./project/_p-feel";
 @use "./project/_p-footer";

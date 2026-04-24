@@ -1,0 +1,141 @@
+@use "../global" as *;
+
+.p-about {
+  padding-top: rem(80);
+  padding-bottom: rem(80);
+
+  @include mq(md) {
+    padding-top: rem(120);
+    padding-bottom: rem(120);
+  }
+}
+
+.p-about__content {
+  color: #1f2b3f;
+}
+
+.p-about__head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.p-about__subtitle {
+  font-family: $base-font-family;
+  font-size: rem(12);
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  color: #b89968;
+
+  @include mq(md) {
+    font-size: rem(14);
+  }
+}
+
+.p-about__title {
+  margin-top: rem(8);
+  font-family: $base-font-family;
+  font-size: rem(28);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+
+  @include mq(md) {
+    margin-top: rem(12);
+    font-size: rem(40);
+  }
+}
+
+.p-about__lead {
+  margin-top: rem(20);
+  font-family: $base-font-family;
+  font-size: rem(14);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.9;
+
+  @include mq(md) {
+    margin-top: rem(28);
+    font-size: rem(16);
+  }
+}
+
+.p-about__list {
+  display: flex;
+  flex-direction: column;
+  margin-top: rem(40);
+  padding: 0;
+  list-style: none;
+
+  @include mq(md) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-top: rem(56);
+  }
+}
+
+.p-about__item {
+  position: relative;
+  padding: rem(28) rem(24) rem(32);
+  background: #fff;
+  border-radius: rem(2);
+
+  @include mq(md) {
+    flex: 0 0 auto;
+    width: calc((100% - #{rem(48)}) / 3);
+    padding: rem(40) rem(32) rem(40);
+  }
+}
+
+.p-about__item + .p-about__item {
+  margin-top: rem(24);
+
+  @include mq(md) {
+    margin-top: 0;
+    margin-left: rem(24);
+  }
+}
+
+.p-about__num {
+  position: absolute;
+  top: rem(28);
+  right: rem(24);
+  font-family: $base-font-family;
+  font-size: rem(14);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: #b89968;
+
+  @include mq(md) {
+    top: rem(40);
+    right: rem(32);
+    font-size: rem(16);
+  }
+}
+
+.p-about__itemTitle {
+  font-family: $base-font-family;
+  font-size: rem(20);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+
+  @include mq(md) {
+    font-size: rem(22);
+  }
+}
+
+.p-about__itemText {
+  margin-top: rem(16);
+  font-family: $base-font-family;
+  font-size: rem(13);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 2;
+
+  @include mq(md) {
+    margin-top: rem(20);
+    font-size: rem(14);
+  }
+}

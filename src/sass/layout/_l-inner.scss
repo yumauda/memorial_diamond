@@ -13,3 +13,11 @@
     padding-left: $padding-pc;
   }
 }
+.l-wide-inner {
+  max-width: $wide-inner;
+  width: 100%;
+  padding-right: $padding-pc;
+  padding-left: $padding-pc;
+  margin-right: auto;
+  margin-left: auto;
+}
