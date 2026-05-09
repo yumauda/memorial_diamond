@@ -1,0 +1,159 @@
+@use "../global" as *;
+
+.p-quality {
+  padding-top: rem(80);
+  padding-bottom: rem(80);
+  background: #fff;
+
+  @include mq(md) {
+    padding-top: rem(120);
+    padding-bottom: rem(120);
+  }
+}
+
+.p-quality__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #1f2b3f;
+
+  @include mq(md) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.p-quality__leadCol {
+  @include mq(md) {
+    flex: 0 0 auto;
+    max-width: rem(340);
+    position: sticky;
+    top: rem(140);
+  }
+}
+
+.p-quality__titleWrap {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.p-quality__title {
+  writing-mode: vertical-rl;
+  font-feature-settings: "vpal";
+  font-family: $base-font-family;
+  font-size: rem(28);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  line-height: 1;
+
+  @include mq(md) {
+    font-size: rem(34);
+  }
+}
+
+.p-quality__subtitle {
+  writing-mode: vertical-rl;
+  margin-left: rem(12);
+  font-feature-settings: "vpal";
+  font-family: $base-font-family;
+  font-size: rem(11);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  color: #b89968;
+
+  @include mq(md) {
+    margin-left: rem(16);
+    font-size: rem(12);
+  }
+}
+
+.p-quality__lead {
+  margin-top: rem(32);
+  font-family: $base-font-family;
+  font-size: rem(14);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 2;
+  text-align: left;
+
+  @include mq(md) {
+    margin-top: rem(40);
+    font-size: rem(15);
+  }
+}
+
+.p-quality__details {
+  width: 100%;
+  margin-top: rem(40);
+
+  @include mq(md) {
+    flex: 1 1 auto;
+    margin-left: rem(56);
+  }
+}
+
+.p-quality__detail {}
+
+.p-quality__img {
+  margin: 0;
+  line-height: 0;
+}
+
+.p-quality__img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 720 / 432;
+  background: #e8e4dc;
+}
+
+.p-quality__point {
+  margin-top: rem(24);
+
+  @include mq(md) {
+    margin-top: rem(28);
+  }
+}
+
+.p-quality__pointLabel {
+  font-family: $base-font-family;
+  font-size: rem(12);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: lowercase;
+  color: #b89968;
+
+  @include mq(md) {
+    font-size: rem(13);
+  }
+}
+
+.p-quality__pointTitle {
+  margin-top: rem(6);
+  font-family: $base-font-family;
+  font-size: rem(18);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+
+  @include mq(md) {
+    margin-top: rem(8);
+    font-size: rem(20);
+  }
+}
+
+.p-quality__pointText {
+  margin-top: rem(14);
+  font-family: $base-font-family;
+  font-size: rem(13);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 2;
+
+  @include mq(md) {
+    margin-top: rem(16);
+    font-size: rem(14);
+  }
+}
