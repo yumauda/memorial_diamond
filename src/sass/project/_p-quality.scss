@@ -93,7 +93,9 @@
   }
 }
 
-.p-quality__detail {}
+.p-quality__detail + .p-quality__detail {
+  margin-top: rem(72);
+}
 
 .p-quality__img {
   margin: 0;
@@ -140,7 +142,7 @@
 
   @include mq(md) {
     margin-top: rem(8);
-    font-size: rem(20);
+    font-size: rem(25);
   }
 }
 
