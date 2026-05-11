@@ -60,6 +60,7 @@
 .p-column__row-img {
   overflow: hidden;
   line-height: 0;
+  aspect-ratio: 527 / 329;
 
   @include mq(md) {
     width: rem(580);
