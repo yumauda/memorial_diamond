@@ -5,11 +5,29 @@
   padding-top: rem(80);
   padding-bottom: rem(80);
   overflow: hidden;
+  --height: 0%;
 
   @include mq(md) {
     padding-top: rem(140);
     padding-bottom: rem(140);
   }
+}
+
+.p-feel::before {
+  position: absolute;
+  content: '';
+  background: url(../images/common/feel_wave.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: rem(223);
+  height: auto;
+  aspect-ratio: 223 / 1195;
+  object-fit: cover;
+  top: 10%;
+  left: rem(0);
+  z-index: 2;
+  height: var(--height);
 }
 
 .p-feel__content {
@@ -32,13 +50,15 @@
 .p-feel__img img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .p-feel__img--topLeft {
   width: rem(200);
   margin-left: rem(-20);
+  aspect-ratio: 275 / 170;
 
   @include mq(md) {
     top: rem(200);
@@ -53,6 +73,7 @@
   margin-top: rem(24);
   margin-left: auto;
   margin-right: rem(-20);
+  aspect-ratio: 364 / 204;
 
   @include mq(md) {
     top: rem(60);
@@ -68,6 +89,7 @@
   margin-top: rem(24);
   margin-left: auto;
   margin-right: rem(-20);
+  aspect-ratio: 215 / 145;
 
   @include mq(md) {
     top: rem(420);
@@ -84,10 +106,10 @@
   justify-content: center;
   align-items: flex-start;
   margin-top: rem(40);
-  color: #1f2b3f;
+  color: #1f3f58;
   font-family: $base-font-family;
-  font-weight: 500;
-  letter-spacing: 0.2em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
 
   @include mq(md) {
     margin-top: rem(60);
@@ -99,26 +121,29 @@
   writing-mode: vertical-rl;
   font-feature-settings: "vpal";
   font-size: rem(22);
-  line-height: 1;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.3em;
+  text-align: center;
+}
+
+.p-feel__title-row--color {
+  color: #b18c4e;
 }
 
 .p-feel__title-row + .p-feel__title-row {
-  margin-right: rem(6);
-
-  @include mq(md) {
-    margin-right: rem(8);
-  }
+  margin-right: rem(18);
 }
 
 @include mq(md) {
   .p-feel__title-row {
-    font-size: rem(32);
+    font-size: rem(30);
   }
 }
 
 .p-feel__text {
   margin-top: rem(40);
-  color: #1f2b3f;
+  color: #1f3f58;
   font-family: $base-font-family;
   font-size: rem(15);
   font-weight: 400;

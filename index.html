@@ -94,16 +94,16 @@
         </div>
       </div>
     </section>
-    <section class="p-feel">
+    <section class="p-feel js-wave">
       <div class="l-inner">
         <div class="p-feel__content">
-          <figure class="p-feel__img p-feel__img--topLeft">
+          <figure class="p-feel__img p-feel__img--topLeft js-parallax">
             <img decoding="async" loading="lazy" src="./images/common/feel_couple.webp" alt="" width="400" height="220">
           </figure>
-          <figure class="p-feel__img p-feel__img--topRight">
+          <figure class="p-feel__img p-feel__img--topRight js-parallax">
             <img decoding="async" loading="lazy" src="./images/common/feel_family.webp" alt="" width="420" height="220">
           </figure>
-          <figure class="p-feel__img p-feel__img--bottomRight">
+          <figure class="p-feel__img p-feel__img--bottomRight js-parallax">
             <img decoding="async" loading="lazy" src="./images/common/feel_young.webp" alt="" width="360" height="220">
           </figure>
           <h2 class="p-feel__title">
@@ -124,7 +124,7 @@
       <div class="l-wide-inner">
         <div class="p-column__content">
           <div class="p-column__row">
-            <figure class="p-column__row-img">
+            <figure class="p-column__row-img js-parallax">
               <img decoding="async" loading="lazy" src="./images/common/column_01.webp" alt="" width="640" height="420">
             </figure>
             <div class="p-column__row-body">
@@ -145,7 +145,7 @@
             </div>
           </div>
           <div class="p-column__row p-column__row--reverse">
-            <figure class="p-column__row-img">
+            <figure class="p-column__row-img js-parallax">
               <img decoding="async" loading="lazy" src="./images/common/column_02.webp" alt="" width="640" height="420">
             </figure>
             <div class="p-column__row-body">
@@ -166,7 +166,7 @@
             </div>
           </div>
           <div class="p-column__row">
-            <figure class="p-column__row-img">
+            <figure class="p-column__row-img js-parallax">
               <img decoding="async" loading="lazy" src="./images/common/column_03.webp" alt="" width="640" height="420">
             </figure>
             <div class="p-column__row-body">
@@ -267,7 +267,7 @@
               </figure>
               <div class="p-quality__point">
                 <span class="p-quality__pointLabel">point 01</span>
-                <h3 class="p-quality__pointTitle">識別コード管理システム</h3>
+                <h3 class="p-quality__pointTitle"><span>識</span>別コード管理システム</h3>
                 <p class="p-quality__pointText">
                   お預かりした素材から完成まで、すべての工程を識別コードで厳格に管理します。<br>
                   取り違えのリスクを完全に排除し、確実にお客様のダイヤモンドをお届けします。
@@ -279,11 +279,10 @@
                 <img decoding="async" loading="lazy" src="./images/common/quality_identify.webp" alt="" width="720" height="432">
               </figure>
               <div class="p-quality__point">
-                <span class="p-quality__pointLabel">point 01</span>
-                <h3 class="p-quality__pointTitle">識別コード管理システム</h3>
+                <span class="p-quality__pointLabel">point 02</span>
+                <h3 class="p-quality__pointTitle"><span>GIA</span>鑑定士による検査</h3>
                 <p class="p-quality__pointText">
-                  お預かりした素材から完成まで、すべての工程を識別コードで厳格に管理します。<br>
-                  取り違えのリスクを完全に排除し、確実にお客様のダイヤモンドをお届けします。
+                  アメリカ宝石学会（GIA）の認定を受けた鑑定士が、すべてのダイヤモンドを厳格に検査します。天然ダイヤモンドと同等の品質基準で評価され、その品質を保証いたします。
                 </p>
               </div>
             </div>
@@ -292,12 +291,30 @@
                 <img decoding="async" loading="lazy" src="./images/common/quality_identify.webp" alt="" width="720" height="432">
               </figure>
               <div class="p-quality__point">
-                <span class="p-quality__pointLabel">point 01</span>
-                <h3 class="p-quality__pointTitle">識別コード管理システム</h3>
-                <p class="p-quality__pointText">
-                  お預かりした素材から完成まで、すべての工程を識別コードで厳格に管理します。<br>
-                  取り違えのリスクを完全に排除し、確実にお客様のダイヤモンドをお届けします。
-                </p>
+                <span class="p-quality__pointLabel">point 03</span>
+                <h3 class="p-quality__pointTitle"><span>4C</span>基準による評価</h3>
+                <div class="p-quality__point-box">
+                  <div class="p-quality__4cCol">
+                    <p class="p-quality__4cBadge">
+                      <span class="p-quality__4cBadgeEn">Cut</span><span class="p-quality__4cBadgeJa">（カット）</span>
+                    </p>
+                    <p class="p-quality__4cDesc">輝きを最大限に引き出すカット技術</p>
+                    <p class="p-quality__4cBadge">
+                      <span class="p-quality__4cBadgeEn">Clarity</span><span class="p-quality__4cBadgeJa">（透明度）</span>
+                    </p>
+                    <p class="p-quality__4cDesc">高い透明度を保証</p>
+                  </div>
+                  <div class="p-quality__4cCol">
+                    <p class="p-quality__4cBadge">
+                      <span class="p-quality__4cBadgeEn">Color</span><span class="p-quality__4cBadgeJa">（カラー）</span>
+                    </p>
+                    <p class="p-quality__4cDesc">無色透明から美しいカラーまで選択可能</p>
+                    <p class="p-quality__4cBadge">
+                      <span class="p-quality__4cBadgeEn">Carat</span><span class="p-quality__4cBadgeJa">（カラット）</span>
+                    </p>
+                    <p class="p-quality__4cDesc">0.1ct〜3.0ctまで対応</p>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="p-quality__detail">
@@ -305,11 +322,10 @@
                 <img decoding="async" loading="lazy" src="./images/common/quality_identify.webp" alt="" width="720" height="432">
               </figure>
               <div class="p-quality__point">
-                <span class="p-quality__pointLabel">point 01</span>
-                <h3 class="p-quality__pointTitle">識別コード管理システム</h3>
+                <span class="p-quality__pointLabel">point 04</span>
+                <h3 class="p-quality__pointTitle"><span>検品</span>証明書の発行</h3>
                 <p class="p-quality__pointText">
-                  お預かりした素材から完成まで、すべての工程を識別コードで厳格に管理します。<br>
-                  取り違えのリスクを完全に排除し、確実にお客様のダイヤモンドをお届けします。
+                  すべてのメモリアルダイヤモンドには、品質を証明する検品証明書を発行いたします。ダイヤモンドの詳細なスペック、製造工程、検査結果が記載されています。
                 </p>
               </div>
             </div>

@@ -18,6 +18,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: rem(1080);
 }
 
 .p-about__subtitle {
@@ -35,14 +38,13 @@
 .p-about__title {
   margin-top: rem(8);
   font-family: $base-font-family;
-  font-size: rem(28);
+  font-size: rem(20);
   font-weight: 500;
   letter-spacing: 0.08em;
   line-height: 1.4;
 
   @include mq(md) {
-    margin-top: rem(12);
-    font-size: rem(40);
+    font-size: rem(30);
   }
 }
 
@@ -84,11 +86,15 @@
   @include mq(md) {
     flex: 0 0 auto;
     width: calc((100% - #{rem(48)}) / 3);
-    padding: rem(40) rem(32) rem(40);
+    padding-top: rem(8);
+    padding-bottom: rem(48);
+    padding-left: rem(40);
+    padding-right: rem(16);
+    border-radius: rem(20);
   }
 }
 
-.p-about__item + .p-about__item {
+.p-about__item+.p-about__item {
   margin-top: rem(24);
 
   @include mq(md) {
@@ -98,18 +104,15 @@
 }
 
 .p-about__num {
-  position: absolute;
-  top: rem(28);
-  right: rem(24);
   font-family: $base-font-family;
   font-size: rem(14);
   font-weight: 400;
   letter-spacing: 0.1em;
   color: #b89968;
+  display: block;
+  text-align: right;
 
   @include mq(md) {
-    top: rem(40);
-    right: rem(32);
     font-size: rem(16);
   }
 }
@@ -120,6 +123,7 @@
   font-weight: 500;
   letter-spacing: 0.06em;
   line-height: 1.6;
+  margin-top: rem(8);
 
   @include mq(md) {
     font-size: rem(22);
@@ -135,6 +139,7 @@
   line-height: 2;
 
   @include mq(md) {
+    padding-right: rem(24);
     margin-top: rem(20);
     font-size: rem(14);
   }

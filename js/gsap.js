@@ -22,6 +22,28 @@ opening.fromTo(".js-header", {
   duration: 1.0,
 },"-=0.8");
 
+let bgWaves = document.querySelectorAll('.js-wave');
+
+bgWaves.forEach((bgWave) => {
+  gsap.fromTo(  
+    bgWave,
+    {
+      opacity: 0,
+      "--height": "0%",
+    },
+    {
+      opacity: 1,
+      duration: 3,
+      ease: 'power2.inOut',
+      "--height": "auto",
+      scrollTrigger: {
+        trigger: bgWave,
+        start: 'top 90%',
+      },
+    }
+  );
+});
+
 let opacityWords = document.querySelectorAll('.js-opacity-word');
 
 opacityWords.forEach((opacityWord) => {
@@ -104,6 +126,7 @@ blueWords.forEach((blueWord) => {
     }
   );
 });
+
 let markers = document.querySelectorAll('.js-marker');
 
 markers.forEach((marker) => {
@@ -146,3 +169,24 @@ submits.forEach((submit) => {
   );
 });
 
+let parallaxImgs = document.querySelectorAll('.js-parallax');
+
+parallaxImgs.forEach((parallaxImg) => {
+  gsap.fromTo(
+    parallaxImg.querySelector('img'),
+    {
+      y: -60,
+    },
+    {
+      y: 0,
+      duration: 1,
+      ease: 'power2.inOut',
+      scrollTrigger: {
+        trigger: parallaxImg,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 2,
+      },
+    }
+  );
+});

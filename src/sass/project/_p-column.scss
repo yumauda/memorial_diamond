@@ -5,6 +5,7 @@
   padding-bottom: rem(60);
   position: relative;
   overflow-x: clip;
+  z-index: 1;
 
   @include mq(md) {
     padding-top: rem(100);
@@ -61,7 +62,6 @@
   line-height: 0;
 
   @include mq(md) {
-    flex: 0 0 auto;
     width: rem(580);
   }
 }
@@ -69,9 +69,8 @@
 .p-column__row-img img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  aspect-ratio: 640 / 420;
 }
 
 .p-column__row-body {
@@ -99,7 +98,7 @@
 .p-column__row-texts {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   flex: 1 1 auto;
 }
 
