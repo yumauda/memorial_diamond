@@ -4,8 +4,7 @@
   position: relative;
   padding-top: rem(80);
   padding-bottom: rem(80);
-  overflow: hidden;
-  --height: 0%;
+  overflow-x: clip;
 
   @include mq(md) {
     padding-top: rem(140);
@@ -13,22 +12,19 @@
   }
 }
 
-.p-feel::before {
+.p-feel svg {
   position: absolute;
-  content: '';
-  background: url(../images/common/feel_wave.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  width: rem(223);
-  height: auto;
-  aspect-ratio: 223 / 1195;
-  object-fit: cover;
-  top: 10%;
-  left: rem(0);
   z-index: 2;
-  height: var(--height);
+  top: rem(148);
+  left: rem(-56);
+  width: rem(225);
+  height: auto;
+  aspect-ratio: 225 / 1196;
+  object-fit: cover;
+  object-fit: cover;
+  object-position: center;
 }
+
 
 .p-feel__content {
   position: relative;
@@ -42,7 +38,7 @@
 
   @include mq(md) {
     position: absolute;
-    z-index: 1;
+    z-index: 3;
   }
 }
 
@@ -127,7 +123,7 @@
   color: #b18c4e;
 }
 
-.p-feel__title-row + .p-feel__title-row {
+.p-feel__title-row+.p-feel__title-row {
   margin-right: rem(18);
 }
 

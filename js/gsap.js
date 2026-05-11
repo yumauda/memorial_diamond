@@ -29,13 +29,13 @@ bgWaves.forEach((bgWave) => {
     bgWave,
     {
       opacity: 0,
-      "--height": "0%",
+      clipPath: "inset(0% 0% 100% 0%)",
     },
     {
       opacity: 1,
-      duration: 3,
+      clipPath: "inset(0% 0% 0% 0%)",
+      duration: 6,
       ease: 'power2.inOut',
-      "--height": "auto",
       scrollTrigger: {
         trigger: bgWave,
         start: 'top 90%',
