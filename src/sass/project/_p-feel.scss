@@ -32,7 +32,6 @@
 
 .p-feel__content {
   position: relative;
-  max-width: rem(1200);
   margin-right: auto;
   margin-left: auto;
 }
@@ -62,9 +61,7 @@
 
   @include mq(md) {
     top: rem(200);
-    left: rem(60);
     width: rem(275);
-    margin-left: 0;
   }
 }
 
@@ -77,7 +74,7 @@
 
   @include mq(md) {
     top: rem(60);
-    right: rem(40);
+    right: rem(-72);
     width: rem(364);
     margin-top: 0;
     margin-right: 0;
@@ -92,11 +89,10 @@
   aspect-ratio: 215 / 145;
 
   @include mq(md) {
-    top: rem(420);
+    top: rem(550);
     right: rem(80);
     width: rem(215);
-    margin-top: 0;
-    margin-right: 0;
+    margin-right: rem(24);
   }
 }
 

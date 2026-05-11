@@ -185,7 +185,7 @@ parallaxImgs.forEach((parallaxImg) => {
         trigger: parallaxImg,
         start: 'top bottom',
         end: 'bottom top',
-        scrub: 2,
+        scrub: 4,
       },
     }
   );
