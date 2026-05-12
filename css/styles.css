@@ -380,11 +380,11 @@ select::-ms-expand {
   }
 }
 
-.p-column svg {
+.p-column__wave {
   position: absolute;
   z-index: 2;
   top: 31.25rem;
-  left: -1.5625rem;
+  left: -6rem;
   width: 61.875rem;
   height: auto;
   aspect-ratio: 990/1596;
@@ -519,6 +519,7 @@ select::-ms-expand {
   align-items: flex-start;
   align-self: flex-start;
   position: relative;
+  z-index: 2;
 }
 @media screen and (min-width: 768px) {
   .p-column__row-titleWrap {
@@ -526,15 +527,24 @@ select::-ms-expand {
   }
 }
 
-.p-column__row-titleWrap svg {
+.p-column__row-titleWrapper {
+  position: relative;
+}
+
+.p-column__row-title-icon {
   position: absolute;
+  width: 3.25rem;
+  height: 3.25rem;
+  z-index: -1;
+  right: -2.5rem;
+  bottom: -2rem;
+}
+
+.p-column__row-title-icon svg {
   width: 3.25rem;
   height: auto;
   aspect-ratio: 52/52;
   object-fit: cover;
-  z-index: -1;
-  top: 12.5rem;
-  right: -0.75rem;
 }
 
 .p-column__row-title {

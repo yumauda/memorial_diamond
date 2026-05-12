@@ -190,3 +190,25 @@ parallaxImgs.forEach((parallaxImg) => {
     }
   );
 });
+
+let columnTitleIcons = document.querySelectorAll('.p-column__row-title-icon');
+
+columnTitleIcons.forEach((icon) => {
+  const row = icon.closest('.p-column__row');
+  gsap.fromTo(
+    icon,
+    {
+      y: -14,
+    },
+    {
+      y: 14,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: row || icon,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 2,
+      },
+    }
+  );
+});
