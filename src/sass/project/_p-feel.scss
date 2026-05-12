@@ -16,7 +16,7 @@
   position: absolute;
   z-index: 2;
   top: rem(148);
-  left: rem(-56);
+  left: rem(-25);
   width: rem(225);
   height: auto;
   aspect-ratio: 225 / 1196;
@@ -30,6 +30,7 @@
   position: relative;
   margin-right: auto;
   margin-left: auto;
+  z-index: 4;
 }
 
 .p-feel__img {
@@ -37,7 +38,7 @@
 
   @include mq(md) {
     position: absolute;
-    z-index: 3;
+    z-index: 5;
   }
 }
 
@@ -46,7 +47,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  // object-position: center;
 }
 
 .p-feel__img--topLeft {

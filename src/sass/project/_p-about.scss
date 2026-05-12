@@ -93,7 +93,16 @@
     border-radius: rem(20);
   }
 }
-
+.p-about__item svg {
+  position: absolute;
+  width: rem(42);
+  height: auto;
+  aspect-ratio: 42 / 42;
+  object-fit: cover;
+  z-index: 2;
+  top: rem(32);
+  left: rem(8);
+}
 .p-about__item+.p-about__item {
   margin-top: rem(24);
 
@@ -124,6 +133,8 @@
   letter-spacing: 0.06em;
   line-height: 1.6;
   margin-top: rem(8);
+  position: relative;
+  z-index: 3;
 
   @include mq(md) {
     font-size: rem(22);
