@@ -63,111 +63,149 @@ opacityWords.forEach((opacityWord) => {
     }
   );
 });
-let proWords = document.querySelectorAll('.js-pro-word');
 
-proWords.forEach((proWord) => {
+let splitTexts = document.querySelectorAll('.js-split-text');
+
+splitTexts.forEach((splitText) => {
+  const text = splitText.textContent.trim();
+  splitText.setAttribute('aria-label', text);
+  splitText.textContent = '';
+
+  Array.from(text).forEach((char) => {
+    const span = document.createElement('span');
+    span.className = 'js-split-text-char';
+    span.setAttribute('aria-hidden', 'true');
+    span.style.display = 'inline-block';
+    span.textContent = char;
+    splitText.appendChild(span);
+  });
+
   gsap.fromTo(
-    proWord,
+    splitText.querySelectorAll('.js-split-text-char'),
     {
-      "--width": "0%",
       opacity: 0,
+      y: 4,
+      filter: "blur(2px)",
     },
     {
-      "--width": "100%",
       opacity: 1,
-      duration: 1.5,
-      ease: 'power3.out',
-      stagger: 0.08,
+      filter: "blur(0px)",
+      y: 0,
+      duration: 0.45,
+      ease: 'power2.out',
+      stagger: 0.1,
       scrollTrigger: {
-        trigger: proWord,
+        trigger: splitText,
         start: 'top 90%',
       },
     }
   );
 });
+// let proWords = document.querySelectorAll('.js-pro-word');
 
-let yellowWords = document.querySelectorAll('.js-yellow-word');
+// proWords.forEach((proWord) => {
+//   gsap.fromTo(
+//     proWord,
+//     {
+//       "--width": "0%",
+//       opacity: 0,
+//     },
+//     {
+//       "--width": "100%",
+//       opacity: 1,
+//       duration: 1.5,
+//       ease: 'power3.out',
+//       stagger: 0.08,
+//       scrollTrigger: {
+//         trigger: proWord,
+//         start: 'top 90%',
+//       },
+//     }
+//   );
+// });
 
-yellowWords.forEach((yellowWord) => {
-  gsap.fromTo(
-    yellowWord,
-    {
-      color: "#fff",
-    },
-    {
-      color: "#fff100",
-      delay: 0.5,
-      duration: 1,
-      ease: 'power2.inOut',
-      scrollTrigger: {
-        trigger: yellowWord,
-        start: 'top 90%',
-      },
-    }
-  );
-});
-let blueWords = document.querySelectorAll('.js-blue-word');
+// let yellowWords = document.querySelectorAll('.js-yellow-word');
 
-blueWords.forEach((blueWord) => {
-  gsap.fromTo(
-    blueWord,
-    {
-      color: "#111",
-    },
-    {
-      color: "#54C3F1",
-      delay: 0.5,
-      duration: 1,
-      ease: 'power2.inOut',
-      scrollTrigger: {
-        trigger: blueWord,
-        start: 'top 90%',
-      },
-    }
-  );
-});
+// yellowWords.forEach((yellowWord) => {
+//   gsap.fromTo(
+//     yellowWord,
+//     {
+//       color: "#fff",
+//     },
+//     {
+//       color: "#fff100",
+//       delay: 0.5,
+//       duration: 1,
+//       ease: 'power2.inOut',
+//       scrollTrigger: {
+//         trigger: yellowWord,
+//         start: 'top 90%',
+//       },
+//     }
+//   );
+// });
+// let blueWords = document.querySelectorAll('.js-blue-word');
 
-let markers = document.querySelectorAll('.js-marker');
+// blueWords.forEach((blueWord) => {
+//   gsap.fromTo(
+//     blueWord,
+//     {
+//       color: "#111",
+//     },
+//     {
+//       color: "#54C3F1",
+//       delay: 0.5,
+//       duration: 1,
+//       ease: 'power2.inOut',
+//       scrollTrigger: {
+//         trigger: blueWord,
+//         start: 'top 90%',
+//       },
+//     }
+//   );
+// });
 
-markers.forEach((marker) => {
-  gsap.fromTo(
-    marker,
-    {
-      "--width": "0%",
-    },
-    {
-      "--width": "100%",
-      delay: 0.5,
-      duration: 1,
-      ease: 'power2.inOut',
-      scrollTrigger: {
-        trigger: marker,
-        start: 'top 90%',
-      },
-    }
-  );
-});
+// let markers = document.querySelectorAll('.js-marker');
 
-let submits = document.querySelectorAll('.js-submit');
+// markers.forEach((marker) => {
+//   gsap.fromTo(
+//     marker,
+//     {
+//       "--width": "0%",
+//     },
+//     {
+//       "--width": "100%",
+//       delay: 0.5,
+//       duration: 1,
+//       ease: 'power2.inOut',
+//       scrollTrigger: {
+//         trigger: marker,
+//         start: 'top 90%',
+//       },
+//     }
+//   );
+// });
 
-submits.forEach((submit) => {
-  gsap.fromTo(
-    submit,
-    {
-      clipPath: "inset(100% 100% 100% 100%)",
-    },
-    {
-      clipPath: "inset(0% 0% 0% 0%)",
-      delay: 0.5,
-      duration: 1,
-      ease: 'power2.inOut',
-      scrollTrigger: {
-        trigger: submit,
-        start: 'top 90%',
-      },
-    }
-  );
-});
+// let submits = document.querySelectorAll('.js-submit');
+
+// submits.forEach((submit) => {
+//   gsap.fromTo(
+//     submit,
+//     {
+//       clipPath: "inset(100% 100% 100% 100%)",
+//     },
+//     {
+//       clipPath: "inset(0% 0% 0% 0%)",
+//       delay: 0.5,
+//       duration: 1,
+//       ease: 'power2.inOut',
+//       scrollTrigger: {
+//         trigger: submit,
+//         start: 'top 90%',
+//       },
+//     }
+//   );
+// });
 
 let parallaxImgs = document.querySelectorAll('.js-parallax');
 
@@ -190,11 +228,31 @@ parallaxImgs.forEach((parallaxImg) => {
     }
   );
 });
+let opacityImgs = document.querySelectorAll('.js-opacity-img');
 
-let columnTitleIcons = document.querySelectorAll('.p-column__row-title-icon');
+opacityImgs.forEach((opacityImg) => {
+  gsap.fromTo(
+    opacityImg,
+    {
+      opacity: 0,
+    },
+    {
+      opacity: 1,
+      duration: 1,
+      ease: 'power2.inOut',
+      scrollTrigger: {
+        trigger: opacityImg,
+        start: 'top bottom',
+        end: 'bottom top',
+      },
+    }
+  );
+});
+
+let columnTitleIcons = document.querySelectorAll('.js-circle-icon');
 
 columnTitleIcons.forEach((icon) => {
-  const row = icon.closest('.p-column__row');
+  const row = icon.closest('.js-circle-icon');
   gsap.fromTo(
     icon,
     {

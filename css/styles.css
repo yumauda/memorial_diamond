@@ -701,7 +701,7 @@ select::-ms-expand {
 }
 
 .p-feel__title-row--color {
-  color: #b18c4e;
+  color: #b18c4e !important;
 }
 
 .p-feel__title-row + .p-feel__title-row {
