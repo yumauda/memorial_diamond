@@ -256,4 +256,242 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     setActiveTab(nextTab);
   });
 
+  // ラインナップ：タブ＋Swiper＋画像クリックでモーダル（サムネイル連動）
+  (function initLineup() {
+    const $lineupTabs = $('.js-lineup-tab');
+    const $lineupInfos = $('.js-lineup-info');
+    const $lineupSliders = $('.js-lineup-slider');
+    const $lineupModal = $('#lineup-modal');
+    if (!$lineupTabs.length || !$lineupModal.length) return;
+
+    const lineupSwipers = {};
+    let modalMainSwiper = null;
+    let modalThumbSwiper = null;
+    let lastFocusEl = null;
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function destroyModalSwipers() {
+      $(document).off('keydown.lineupModal');
+      if (modalMainSwiper) {
+        modalMainSwiper.destroy(true, true);
+        modalMainSwiper = null;
+      }
+      if (modalThumbSwiper) {
+        modalThumbSwiper.destroy(true, true);
+        modalThumbSwiper = null;
+      }
+      $lineupModal.find('.js-lineup-modal-main .swiper-wrapper').empty();
+      $lineupModal.find('.js-lineup-modal-thumbs .swiper-wrapper').empty();
+    }
+
+    function closeLineupModal() {
+      if ($lineupModal.prop('hidden')) return;
+      destroyModalSwipers();
+      $lineupModal.prop('hidden', true);
+      $('body').css('overflow', '');
+      if (lastFocusEl) {
+        lastFocusEl.focus();
+        lastFocusEl = null;
+      }
+    }
+
+    function initLineupSwiper($root) {
+      const key = $root.attr('data-lineup');
+      if (!key || lineupSwipers[key]) return;
+      const $wrap = $root.closest('.p-lineup__sliderWrap');
+      const $scope = $wrap.length ? $wrap : $root;
+      lineupSwipers[key] = new Swiper($root[0], {
+        slidesPerView: 1.2,
+        spaceBetween: 16,
+        loop: true,
+        watchOverflow: false,
+        navigation: {
+          nextEl: $scope.find('.swiper-button-next')[0],
+          prevEl: $scope.find('.swiper-button-prev')[0],
+        },
+        pagination: {
+          el: $scope.find('.p-lineup__pagination')[0],
+          clickable: true,
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 18,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 17,
+          },
+        },
+        observer: true,
+        observeParents: true,
+      });
+    }
+
+    function setActiveLineupTab(tabEl) {
+      const $tab = $(tabEl);
+      const lineupKey = $tab.attr('data-lineup');
+
+      $lineupTabs.each(function () {
+        const isActive = this === tabEl;
+        $(this)
+          .toggleClass('is-active', isActive)
+          .attr('aria-selected', isActive ? 'true' : 'false')
+          .attr('tabindex', isActive ? '0' : '-1');
+      });
+
+      $lineupInfos.each(function () {
+        const isTarget = $(this).attr('data-lineup') === lineupKey;
+        $(this).toggleClass('is-active', isTarget).prop('hidden', !isTarget);
+      });
+
+      $lineupSliders.each(function () {
+        const isTarget = $(this).attr('data-lineup') === lineupKey;
+        $(this).toggleClass('is-active', isTarget).prop('hidden', !isTarget);
+      });
+
+      $('.js-lineup-swiper').each(function () {
+        initLineupSwiper($(this));
+      });
+
+      if (lineupKey && lineupSwipers[lineupKey]) {
+        window.requestAnimationFrame(function () {
+          lineupSwipers[lineupKey].update();
+        });
+      }
+    }
+
+    $('.js-lineup-swiper').each(function () {
+      initLineupSwiper($(this));
+    });
+
+    $lineupTabs.on('click', function () {
+      setActiveLineupTab(this);
+    });
+
+    $lineupTabs.on('keydown', function (e) {
+      const key = e.key;
+      if (key !== 'ArrowLeft' && key !== 'ArrowRight' && key !== 'Home' && key !== 'End') return;
+
+      e.preventDefault();
+      const currentIndex = $lineupTabs.index(this);
+      let nextIndex = currentIndex;
+
+      if (key === 'ArrowLeft') nextIndex = Math.max(0, currentIndex - 1);
+      if (key === 'ArrowRight') nextIndex = Math.min($lineupTabs.length - 1, currentIndex + 1);
+      if (key === 'Home') nextIndex = 0;
+      if (key === 'End') nextIndex = $lineupTabs.length - 1;
+
+      const nextTab = $lineupTabs.get(nextIndex);
+      nextTab.focus();
+      setActiveLineupTab(nextTab);
+    });
+
+    $(document).on('click', '.js-lineup-open-modal', function (e) {
+      e.preventDefault();
+      if (typeof Swiper === 'undefined') return;
+
+      const $btn = $(this);
+      const $swiperRoot = $btn.closest('.js-lineup-swiper');
+      const slideIndex = $btn.closest('.swiper-slide').index();
+
+      const slides = [];
+      $swiperRoot.find('.js-lineup-slide-img').each(function () {
+        const el = this;
+        slides.push({
+          src: el.getAttribute('src') || '',
+          alt: el.getAttribute('alt') || '',
+          width: el.getAttribute('width') || '640',
+          height: el.getAttribute('height') || '420',
+        });
+      });
+
+      const $mainWrap = $lineupModal.find('.js-lineup-modal-main .swiper-wrapper');
+      const $thumbWrap = $lineupModal.find('.js-lineup-modal-thumbs .swiper-wrapper');
+
+      destroyModalSwipers();
+
+      slides.forEach(function (item) {
+        $mainWrap.append(
+          '<div class="swiper-slide"><img decoding="async" loading="eager" src="' +
+            escapeHtml(item.src) +
+            '" alt="' +
+            escapeHtml(item.alt) +
+            '" width="' +
+            escapeHtml(item.width) +
+            '" height="' +
+            escapeHtml(item.height) +
+            '"></div>'
+        );
+        $thumbWrap.append(
+          '<div class="swiper-slide"><img decoding="async" loading="eager" src="' +
+            escapeHtml(item.src) +
+            '" alt="" width="' +
+            escapeHtml(item.width) +
+            '" height="' +
+            escapeHtml(item.height) +
+            '"></div>'
+        );
+      });
+
+      const mainEl = $lineupModal.find('.js-lineup-modal-main')[0];
+      const thumbEl = $lineupModal.find('.js-lineup-modal-thumbs')[0];
+
+      modalThumbSwiper = new Swiper(thumbEl, {
+        spaceBetween: 10,
+        slidesPerView: 'auto',
+        freeMode: true,
+        watchSlidesProgress: true,
+      });
+
+      modalMainSwiper = new Swiper(mainEl, {
+        initialSlide: Math.max(0, slideIndex),
+        spaceBetween: 10,
+        navigation: {
+          nextEl: $lineupModal.find('.js-lineup-modal-main .swiper-button-next')[0],
+          prevEl: $lineupModal.find('.js-lineup-modal-main .swiper-button-prev')[0],
+        },
+        thumbs: {
+          swiper: modalThumbSwiper,
+        },
+      });
+
+      lastFocusEl = this;
+      $lineupModal.prop('hidden', false);
+      $('body').css('overflow', 'hidden');
+
+      $(document).on('keydown.lineupModal', function (ev) {
+        if (ev.key !== 'Escape') return;
+        ev.preventDefault();
+        closeLineupModal();
+      });
+
+      window.requestAnimationFrame(function () {
+        modalMainSwiper.update();
+        modalThumbSwiper.update();
+      });
+
+      $lineupModal.find('.p-lineup__modalClose').trigger('focus');
+    });
+
+    $('.js-lineup-modal-close').on('click', function (e) {
+      e.preventDefault();
+      closeLineupModal();
+    });
+  })();
+
+  $('.p-faq__summary').on('click', function () {
+    const $btn = $(this);
+    const $item = $btn.closest('.p-faq__item');
+    $item.toggleClass('is-open');
+    $btn.attr('aria-expanded', $item.hasClass('is-open') ? 'true' : 'false');
+  });
+
 });

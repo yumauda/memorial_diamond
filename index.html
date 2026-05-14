@@ -31,13 +31,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/styles.css?v=20260330">
+  <link rel="stylesheet" href="./css/styles.css?v=20260515">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
   <!-- JavaScript -->
   <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script defer src="./js/gsap.js?v=20260324"></script>
-  <script defer src="./js/script.js?v=20260330"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script defer src="./js/script.js?v=20260515"></script>
 </head>
 
 <body>
@@ -410,7 +412,7 @@
             </div>
             <div class="p-quality__detail">
               <figure class="p-quality__img">
-                <img decoding="async" loading="lazy" src="./images/common/quality_identify.webp" alt="" width="720" height="432">
+                <img decoding="async" loading="lazy" src="./images/common/attachment.webp" alt="" width="720" height="432">
               </figure>
               <div class="p-quality__point">
                 <span class="p-quality__pointLabel">point 04</span>
@@ -432,7 +434,8 @@
               <img decoding="async" loading="lazy" src="./images/common/guarantee_visual.png" alt="" width="1356" height="640">
             </figure>
             <div class="p-guarantee__body">
-              <h2 class="p-guarantee__badge" aria-label="安心の品質保証">
+              <h2 class="p-guarantee__badge">
+                <span class="u-visually-hidden">安心の品質保証</span>
                 <span class="p-guarantee__badgeLine" aria-hidden="true">品質保証</span>
                 <span class="p-guarantee__badgeLine" aria-hidden="true">安心の</span>
               </h2>
@@ -449,9 +452,492 @@
         </div>
       </div>
     </section>
-    
-    
+    <section class="p-lineup">
+      <div class="l-inner">
+        <div class="p-lineup__content">
+          <div class="p-lineup__head">
+            <p class="p-lineup__subtitle" lang="en">Product lineup</p>
+            <h2 class="p-lineup__title">商品ラインナップ</h2>
+            <p class="p-lineup__lead">
+              ライフスタイルに合わせて、お好みの形をお選びいただけます。
+            </p>
+          </div>
+          <div class="p-lineup__main">
+            <div class="p-lineup__tabs" role="tablist" aria-label="ラインナップの種別">
+              <button type="button" class="p-lineup__tab is-active js-lineup-tab" role="tab" id="lineup-tab-pendant" aria-selected="true" tabindex="0" data-lineup="pendant">ペンダントトップ</button>
+              <button type="button" class="p-lineup__tab js-lineup-tab" role="tab" id="lineup-tab-chain" aria-selected="false" tabindex="-1" data-lineup="chain">チェーン</button>
+              <button type="button" class="p-lineup__tab js-lineup-tab" role="tab" id="lineup-tab-ring" aria-selected="false" tabindex="-1" data-lineup="ring">リング</button>
+              <button type="button" class="p-lineup__tab js-lineup-tab" role="tab" id="lineup-tab-mens" aria-selected="false" tabindex="-1" data-lineup="mens">メンズ</button>
+              <button type="button" class="p-lineup__tab js-lineup-tab" role="tab" id="lineup-tab-loose" aria-selected="false" tabindex="-1" data-lineup="loose">ルース</button>
+            </div>
+            <div class="p-lineup__infos">
+              <div class="p-lineup__info is-active js-lineup-info" data-lineup="pendant">
+                <p class="p-lineup__infoText">
+                  お好みのデザインや素材感に合わせて、<br>トップバリエーションをご用意しています。
+                </p>
+                <div class="p-lineup__infoVertical" aria-hidden="true">
+                  <p class="p-lineup__infoEn" lang="en">pendant</p>
+                  <p class="p-lineup__infoJp">ペンダント</p>
+                  <div class="p-lineup__mark">
+                    <svg  viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="21" cy="21" r="21" fill="url(#paint0_linear_2331_560)"/>
+                      <defs>
+                      <linearGradient id="paint0_linear_2331_560" x1="21" y1="0" x2="21" y2="42" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#F4F1EA"/>
+                      <stop offset="1" stop-color="#E7DAC0"/>
+                      </linearGradient>
+                      </defs>
+                      </svg>
+                      
+                  </div>
+                </div>
+              </div>
+              <div class="p-lineup__info js-lineup-info" data-lineup="chain" hidden>
+                <p class="p-lineup__infoText">
+                  シンプルで上品なデザインのチェーン。<br>日常使いにも特別な日にも。
+                </p>
+                <div class="p-lineup__infoVertical" aria-hidden="true">
+                  <p class="p-lineup__infoEn" lang="en">chain</p>
+                  <p class="p-lineup__infoJp">チェーン</p>
+                  <div class="p-lineup__mark">
+                    <svg  viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="21" cy="21" r="21" fill="url(#paint0_linear_2331_560)"/>
+                      <defs>
+                      <linearGradient id="paint0_linear_2331_560" x1="21" y1="0" x2="21" y2="42" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#F4F1EA"/>
+                      <stop offset="1" stop-color="#E7DAC0"/>
+                      </linearGradient>
+                      </defs>
+                      </svg>
+                      
+                  </div>
+                </div>
+              </div>
+              <div class="p-lineup__info js-lineup-info" data-lineup="ring" hidden>
+                <p class="p-lineup__infoText">
+                  指元を彩るリングのバリエーション。<br>シーンに合わせてお選びいただけます。
+                </p>
+                <div class="p-lineup__infoVertical" aria-hidden="true">
+                  <p class="p-lineup__infoEn" lang="en">ring</p>
+                  <p class="p-lineup__infoJp">リング</p>
+                </div>
+              </div>
+              <div class="p-lineup__info js-lineup-info" data-lineup="mens" hidden>
+                <p class="p-lineup__infoText">
+                  力強さと品格を兼ね備えたメンズライン。<br>大切な節目の贈り物にも。
+                </p>
+                <div class="p-lineup__infoVertical" aria-hidden="true">
+                  <p class="p-lineup__infoEn" lang="en">mens</p>
+                  <span class="p-lineup__infoCircle"></span>
+                  <p class="p-lineup__infoJp">メンズ</p>
+                </div>
+              </div>
+              <div class="p-lineup__info js-lineup-info" data-lineup="loose" hidden>
+                <p class="p-lineup__infoText">
+                  ルース（裸石）のままお選びいただけます。<br>お好みの仕立てでお楽しみください。
+                </p>
+                <div class="p-lineup__infoVertical" aria-hidden="true">
+                  <p class="p-lineup__infoEn" lang="en">loose</p>
+                  <span class="p-lineup__infoCircle"></span>
+                  <p class="p-lineup__infoJp">ルース</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-lineup__sliders">
+            <div class="p-lineup__sliderWrap is-active js-lineup-slider" data-lineup="pendant">
+              <div class="swiper p-lineup__swiper js-lineup-swiper" data-lineup="pendant">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide p-lineup__slide">
+                    <button type="button" class="p-lineup__slideBtn js-lineup-open-modal" aria-label="ペンダントトップ K5293SN を拡大表示">
+                      <img class="p-lineup__slideImg js-lineup-slide-img" decoding="async" loading="lazy" src="./images/common/lineup_pendant_01.png" alt="K5293SN ペンダントトップ" width="257" height="215">
+                    </button>
+                    <p class="p-lineup__slideCaption">0.1ct</p>
+                  </div>
+                  <div class="swiper-slide p-lineup__slide">
+                    <button type="button" class="p-lineup__slideBtn js-lineup-open-modal" aria-label="ペンダントトップ K5339N を拡大表示">
+                      <img class="p-lineup__slideImg js-lineup-slide-img" decoding="async" loading="lazy" src="./images/common/lineup_pendant_02.png" alt="K5339N ペンダントトップ" width="257" height="215">
+                    </button>
+                    <p class="p-lineup__slideCaption">0.1ct</p>
+                  </div>
+                  <div class="swiper-slide p-lineup__slide">
+                    <button type="button" class="p-lineup__slideBtn js-lineup-open-modal" aria-label="ペンダントトップ K5341SN を拡大表示">
+                      <img class="p-lineup__slideImg js-lineup-slide-img" decoding="async" loading="lazy" src="./images/common/lineup_pendant_03.png" alt="K5341SN ペンダントトップ" width="257" height="215">
+                    </button>
+                    <p class="p-lineup__slideCaption">0.1ct</p>
+                  </div>
+                  <div class="swiper-slide p-lineup__slide">
+                    <button type="button" class="p-lineup__slideBtn js-lineup-open-modal" aria-label="ペンダントトップ K5346SN を拡大表示">
+                      <img class="p-lineup__slideImg js-lineup-slide-img" decoding="async" loading="lazy" src="./images/common/lineup_pendant_04.png" alt="K5346SN ペンダントトップ" width="257" height="215">
+                    </button>
+                    <p class="p-lineup__slideCaption">0.1ct</p>
+                  </div>
+                  <div class="swiper-slide p-lineup__slide">
+                    <button type="button" class="p-lineup__slideBtn js-lineup-open-modal" aria-label="ペンダントトップ K5293SN（追加）を拡大表示">
+                      <img class="p-lineup__slideImg js-lineup-slide-img" decoding="async" loading="lazy" src="./images/common/lineup_pendant_01.png" alt="K5293SN ペンダントトップ" width="257" height="215">
+                    </button>
+                    <p class="p-lineup__slideCaption">0.1ct</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-lineup__controls">
+                <div class="p-lineup__pagination swiper-pagination" aria-hidden="true"></div>
+                <div class="p-lineup__nav">
+                  <button type="button" class="p-lineup__navBtn p-lineup__navBtn--prev swiper-button-prev" aria-label="前のスライドへ"></button>
+                  <button type="button" class="p-lineup__navBtn p-lineup__navBtn--next swiper-button-next" aria-label="次のスライドへ"></button>
+                </div>
+              </div>
+            </div>
+            <div class="p-lineup__sliderWrap js-lineup-slider" data-lineup="chain" hidden>
+              <div class="swiper p-lineup__swiper js-lineup-swiper" data-lineup="chain">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide p-lineup__slide">
+                    <button type="button" class="p-lineup__slideBtn js-lineup-open-modal" aria-label="チェーン画像1を拡大表示">
+                      <img class="p-lineup__slideImg js-lineup-slide-img" decoding="async" loading="lazy" src="./images/common/feel_couple.webp" alt="チェーンのイメージ1" width="640" height="420">
+                    </button>
+                  </div>
+                  <div class="swiper-slide p-lineup__slide">
+                    <button type="button" class="p-lineup__slideBtn js-lineup-open-modal" aria-label="チェーン画像2を拡大表示">
+                      <img class="p-lineup__slideImg js-lineup-slide-img" decoding="async" loading="lazy" src="./images/common/feel_family.webp" alt="チェーンのイメージ2" width="640" height="420">
+                    </button>
+                  </div>
+                  <div class="swiper-slide p-lineup__slide">
+                    <button type="button" class="p-lineup__slideBtn js-lineup-open-modal" aria-label="チェーン画像3を拡大表示">
+                      <img class="p-lineup__slideImg js-lineup-slide-img" decoding="async" loading="lazy" src="./images/common/feel_young.webp" alt="チェーンのイメージ3" width="640" height="420">
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="p-lineup__controls">
+                <div class="p-lineup__pagination swiper-pagination" aria-hidden="true"></div>
+                <div class="p-lineup__nav">
+                  <button type="button" class="p-lineup__navBtn p-lineup__navBtn--prev swiper-button-prev" aria-label="前のスライドへ"></button>
+                  <button type="button" class="p-lineup__navBtn p-lineup__navBtn--next swiper-button-next" aria-label="次のスライドへ"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="p-process">
+      <div class="l-wide-inner">
+        <div class="p-process__content">
+          <div class="p-process__head">
+            <p class="p-process__subtitle" lang="en">Process after ordering</p>
+            <h2 class="p-process__title">ご注文後の流れ</h2>
+            <p class="p-process__lead">
+              ご注文からお届けまで、通常4〜5ヶ月程度のお時間をいただいております。
+            </p>
+          </div>
+          <div class="p-process__body">
+            <ol class="p-process__list">
+              <li class="p-process__item">
+                <div class="p-process__card">
+                  <span class="p-process__badge" aria-hidden="true">01</span>
+                  <div class="p-process__texts">
+                    <h3 class="p-process__itemTitle">お見積り</h3>
+                    <p class="p-process__itemText">
+                      ご希望の仕様に基づいてお見積りを作成し、お支払い方法をご案内いたします。
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="p-process__item">
+                <div class="p-process__card">
+                  <span class="p-process__badge" aria-hidden="true">02</span>
+                  <div class="p-process__texts">
+                    <h3 class="p-process__itemTitle">注文・お支払い</h3>
+                    <p class="p-process__itemText">
+                      お問い合わせフォームまたはお電話にて、ご注文を承ります。
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="p-process__item">
+                <div class="p-process__card">
+                  <span class="p-process__badge" aria-hidden="true">03</span>
+                  <div class="p-process__texts">
+                    <h3 class="p-process__itemTitle">識別番号発行・<br>素材キットお届け</h3>
+                    <p class="p-process__itemText">
+                      専用の識別番号を発行し、素材をお預かりするための専用キットをお送りします。
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="p-process__item">
+                <div class="p-process__card">
+                  <span class="p-process__badge" aria-hidden="true">04</span>
+                  <div class="p-process__texts">
+                    <h3 class="p-process__itemTitle">素材キットご返送</h3>
+                    <p class="p-process__itemText">
+                      ご遺骨や毛髪などの素材を、専用キットに入れてご返送ください。
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="p-process__item">
+                <div class="p-process__card">
+                  <span class="p-process__badge" aria-hidden="true">05</span>
+                  <div class="p-process__texts">
+                    <h3 class="p-process__itemTitle">お預かりした素材を専門工場へ発送/
+
+                    </h3>
+                    <p class="p-process__itemText">
+                      識別番号で厳格に管理しながら、専門の製造工場へ素材を発送いたします。
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="p-process__item">
+                <div class="p-process__card">
+                  <span class="p-process__badge" aria-hidden="true">06</span>
+                  <div class="p-process__texts">
+                    <h3 class="p-process__itemTitle">ダイヤモンドへ加工</h3>
+                    <p class="p-process__itemText">
+                      高温高圧の環境下で約1.5ヶ月前後かけて、炭素をダイヤモンドへと結晶化させます。
+                    </p>
+                    <p class="p-process__tag">3ヶ月</p>
+                  </div>
+                </div>
+              </li>
+              <li class="p-process__item">
+                <div class="p-process__card">
+                  <span class="p-process__badge" aria-hidden="true">07</span>
+                  <div class="p-process__texts">
+                    <h3 class="p-process__itemTitle"><span>品質管理センターにて</span>検品・検品証明書を発行</h3>
+                    <p class="p-process__itemText">
+                      高温高圧の環境下で約1.4C基準に基づいた厳格な検品を実施し、品質を保証する検品証明書を発行いたします。
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="p-process__item">
+                <div class="p-process__card">
+                  <span class="p-process__badge" aria-hidden="true">08</span>
+                  <div class="p-process__texts">
+                    <h3 class="p-process__itemTitle">鑑別書作成</h3>
+                    <p class="p-process__itemText">
+                     ご希望の場合は、日本国内宝石鑑別機関発行の鑑別書（有料）を作成いたします。
+                    </p>
+                    <p class="p-process__tag">1〜1.5ヶ月</p>
+                  </div>
+                </div>
+              </li>
+              <li class="p-process__item">
+                <div class="p-process__card">
+                  <span class="p-process__badge" aria-hidden="true">09</span>
+                  <div class="p-process__texts">
+                    <h3 class="p-process__itemTitle">ジュエリー加工</h3>
+                    <p class="p-process__itemText">
+                      ネックレスやリングなど、ご希望の形に熟練の職人が丁寧に加工します。
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="p-process__item">
+                <div class="p-process__card">
+                  <span class="p-process__badge" aria-hidden="true">10</span>
+                  <div class="p-process__texts">
+                    <h3 class="p-process__itemTitle">完成したダイヤモンドをお届け</h3>
+                    <p class="p-process__itemText">
+                      専用ケースに入れて、大切にお届けいたします。
+                    </p>
+                    <p class="p-process__tag">1〜1.5ヶ月</p>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="p-double">
+      <div class="l-inner">
+        <div class="p-double__content">
+          <article class="p-double__panel">
+            <div class="p-double__frame">
+              <div class="p-double__icon" aria-hidden="true">
+                <svg viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.60569 34.6016C5.50919 33.5054 4.96094 32.1701 4.96094 30.5959C4.96094 29.0216 5.50919 27.6862 6.60569 26.5897C7.70189 25.4932 9.03713 24.945 10.6114 24.945C12.1857 24.945 13.5211 25.4932 14.6176 26.5897C15.7141 27.6862 16.2623 29.0216 16.2623 30.5959C16.2623 32.1701 15.7141 33.5054 14.6176 34.6016C13.5211 35.6981 12.1857 36.2463 10.6114 36.2463C9.03713 36.2463 7.70189 35.6981 6.60569 34.6016ZM28.3995 34.6016C27.2956 33.5054 26.7436 32.1701 26.7436 30.5959C26.7436 29.0216 27.2956 27.6862 28.3995 26.5897C29.5038 25.4932 30.8392 24.945 32.4057 24.945C33.9722 24.945 35.3037 25.4932 36.4002 26.5897C37.4964 27.6862 38.0445 29.0216 38.0445 30.5959C38.0445 32.1701 37.4964 33.5054 36.4002 34.6016C35.3037 35.6981 33.9722 36.2463 32.4057 36.2463C30.8392 36.2463 29.5038 35.6981 28.3995 34.6016ZM13.5408 33.5275C14.3443 32.7257 14.7461 31.7494 14.7461 30.5986C14.7461 29.4474 14.3452 28.4701 13.5435 27.6665C12.7417 26.8629 11.7652 26.4611 10.6141 26.4611C9.46325 26.4611 8.48604 26.862 7.68248 27.6638C6.87892 28.4656 6.47714 29.442 6.47714 30.5932C6.47714 31.744 6.87802 32.7212 7.67979 33.5248C8.48156 34.3284 9.45787 34.7301 10.6087 34.7301C11.7599 34.7301 12.7372 34.3293 13.5408 33.5275ZM35.3234 33.5275C36.127 32.7257 36.5288 31.7494 36.5288 30.5986C36.5288 29.4474 36.1279 28.4701 35.3261 27.6665C34.5243 26.8629 33.5527 26.4611 32.4111 26.4611C31.2698 26.4611 30.2926 26.862 29.4794 27.6638C28.666 28.4656 28.2593 29.442 28.2593 30.5932C28.2593 31.744 28.6651 32.7212 29.4768 33.5248C30.2881 34.3284 31.2644 34.7301 32.4057 34.7301C33.5473 34.7301 34.5199 34.3293 35.3234 33.5275ZM17.5116 16.3911C16.4076 15.2868 15.8556 13.9514 15.8556 12.3849C15.8556 10.8184 16.4076 9.4869 17.5116 8.3904C18.6158 7.2942 19.9512 6.74609 21.5177 6.74609C23.0842 6.74609 24.4158 7.2942 25.5123 8.3904C26.6088 9.4869 27.157 10.8184 27.157 12.3849C27.157 13.9514 26.6088 15.2868 25.5123 16.3911C24.4158 17.495 23.0842 18.047 21.5177 18.047C19.9512 18.047 18.6158 17.495 17.5116 16.3911ZM24.4355 15.3138C25.239 14.5025 25.6408 13.5262 25.6408 12.3849C25.6408 11.2433 25.2399 10.2708 24.4381 9.46719C23.6364 8.66363 22.6648 8.26184 21.5236 8.26184C20.382 8.26184 19.4046 8.66273 18.5915 9.4645C17.7784 10.2663 17.3718 11.238 17.3718 12.3795C17.3718 13.5208 17.7775 14.498 18.5888 15.3112C19.4001 16.1246 20.3766 16.5313 21.5182 16.5313C22.6595 16.5313 23.6319 16.1255 24.4355 15.3138Z" fill="#F6F3EE"/>
+                  </svg>
+                  
+              </div>
+              <h2 class="p-double__title">素材について</h2>
+              <p class="p-double__text">
+                ご遺骨の場合は2〜3g、毛髪の場合は1〜10gから生成可能です。<br>
+                思い入れのある場所の毛髪や、ペットの毛からも生成できます。お気軽にご相談ください。
+              </p>
+            </div>
+          </article>
+          <article class="p-double__panel">
+            <div class="p-double__frame">
+              <div class="p-double__icon" aria-hidden="true">
+                <svg viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.8148 36.1088H29.1865V30.6397C29.1865 28.4882 28.4434 26.6515 26.9572 25.1295C25.471 23.6071 23.6521 22.846 21.5007 22.846C19.3492 22.846 17.5303 23.6071 16.0441 25.1295C14.5579 26.6515 13.8148 28.4882 13.8148 30.6397V36.1088ZM8.95898 37.625V36.1088H12.2987V30.6397C12.2987 28.3204 13.0301 26.2866 14.493 24.5382C15.9559 22.7899 17.8201 21.7771 20.0857 21.5C17.8201 21.1951 15.9559 20.1667 14.493 18.4147C13.0301 16.6625 12.2987 14.6419 12.2987 12.3531V6.8912H8.95898V5.375H34.0423V6.8912H30.7027V12.3531C30.7027 14.6419 29.9712 16.6625 28.5083 18.4147C27.0454 20.1667 25.1812 21.1951 22.9156 21.5C25.1812 21.7771 27.0454 22.7899 28.5083 24.5382C29.9712 26.2866 30.7027 28.3204 30.7027 30.6397V36.1088H34.0423V37.625H8.95898Z" fill="#F6F3EE"/>
+                  </svg>
+                  
+              </div>
+              <h2 class="p-double__title">製造期間について</h2>
+              <p class="p-double__text">
+                ダイヤモンドの生成には約3ヶ月、ジュエリー加工を含めると全体で4〜5ヶ月程度かかります。
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="p-faq">
+      <div class="l-inner">
+        <div class="p-faq__content">
+          <div class="p-faq__layout">
+            <div class="p-faq__head">
+              <p class="p-faq__subtitle" lang="en">Q&amp;A</p>
+              <h2 class="p-faq__title">よくあるご質問</h2>
+            </div>
+            <div class="p-faq__list">
+            <div class="p-faq__item">
+              <button type="button" class="p-faq__summary" aria-expanded="false">
+                <span class="p-faq__question">本当に同じ炭素から作られているのですか？</span>
+                <span class="p-faq__icon" aria-hidden="true"></span>
+              </button>
+              <div class="p-faq__panel">
+                <div class="p-faq__answer">
+                <p class="p-faq__answer-text">はい。お預かりいただいた遺骨や毛髪から炭素を抽出し、それを原料としてダイヤモンドを生成します。生成されたダイヤモンドは天然ダイヤモンドと同じ炭素の結晶構造を持ち、硬度や輝きも同等です。</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-faq__item">
+              <button type="button" class="p-faq__summary" aria-expanded="false">
+                <span class="p-faq__question">どれくらいの量を預ける必要がありますか？</span>
+                <span class="p-faq__icon" aria-hidden="true"></span>
+              </button>
+              <div class="p-faq__panel">
+                <div class="p-faq__answer">
+                <p class="p-faq__answer-text">ご遺骨の場合はおおむね2〜3g、毛髪の場合は1〜10g程度を目安にお預かりいただきます。お体の状態やご希望に応じて前後する場合がありますので、詳しくはお問い合わせください。</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-faq__item">
+              <button type="button" class="p-faq__summary" aria-expanded="false">
+                <span class="p-faq__question">製造にどのくらい時間がかかりますか？</span>
+                <span class="p-faq__icon" aria-hidden="true"></span>
+              </button>
+              <div class="p-faq__panel">
+                <div class="p-faq__answer">
+                <p class="p-faq__answer-text">ダイヤモンドの生成にはおおよそ3ヶ月を要します。ジュエリー加工まで含めた全体の工程では、4〜5ヶ月程度を見込んでください。内容により前後します。</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-faq__item">
+              <button type="button" class="p-faq__summary" aria-expanded="false">
+                <span class="p-faq__question">天然ダイヤモンドとの違いは何ですか？</span>
+                <span class="p-faq__icon" aria-hidden="true"></span>
+              </button>
+              <div class="p-faq__panel">
+                <div class="p-faq__answer">
+                <p class="p-faq__answer-text">天然ダイヤモンドは地中で長い年月をかけて自然に形成されるのに対し、メモリアルダイヤモンドはお預かりした炭素を用いて工房内で育成します。いずれも純粋な炭素の結晶であり、物理的な美しさや耐久性に本質的な差はありません。</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-faq__item">
+              <button type="button" class="p-faq__summary" aria-expanded="false">
+                <span class="p-faq__question">色は選べますか？</span>
+                <span class="p-faq__icon" aria-hidden="true"></span>
+              </button>
+              <div class="p-faq__panel">
+                <div class="p-faq__answer">
+                <p class="p-faq__answer-text">カラーには複数のバリエーションがございます。ご希望のトーンに近づけられるよう、生成条件を調整いたします。詳細はご相談時にご案内します。</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-faq__item">
+              <button type="button" class="p-faq__summary" aria-expanded="false">
+                <span class="p-faq__question">遺骨は全て使われてしまいますか？</span>
+                <span class="p-faq__icon" aria-hidden="true"></span>
+              </button>
+              <div class="p-faq__panel">
+                <div class="p-faq__answer">
+                <p class="p-faq__answer-text">いいえ。ダイヤモンド化に必要な量のみを使用し、すべてを消費するようなことはありません。未使用の遺骨はご返却いたします。</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-faq__item">
+              <button type="button" class="p-faq__summary" aria-expanded="false">
+                <span class="p-faq__question">ペットの遺骨からも作れますか？</span>
+                <span class="p-faq__icon" aria-hidden="true"></span>
+              </button>
+              <div class="p-faq__panel">
+                <div class="p-faq__answer">
+                <p class="p-faq__answer-text">はい、ペット様の遺骨や毛からも生成可能です。大切なご家族の一員として、同じ工程で丁寧にお預かりいたします。</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-faq__item">
+              <button type="button" class="p-faq__summary" aria-expanded="false">
+                <span class="p-faq__question">アフターサービスはありますか？</span>
+                <span class="p-faq__icon" aria-hidden="true"></span>
+              </button>
+              <div class="p-faq__panel">
+                <div class="p-faq__answer">
+                <p class="p-faq__answer-text">仕上がり後のサイズ直しやリフォームなど、内容に応じたアフターサービスをご用意しております。まずはお気軽にご相談ください。</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-faq__item">
+              <button type="button" class="p-faq__summary" aria-expanded="false">
+                <span class="p-faq__question">支払い方法は何がありますか？</span>
+                <span class="p-faq__icon" aria-hidden="true"></span>
+              </button>
+              <div class="p-faq__panel">
+                <div class="p-faq__answer">
+                <p class="p-faq__answer-text">銀行振込のほか、クレジットカード決済など、ご契約内容に応じたお支払い方法をご案内いたします。</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-faq__item">
+              <button type="button" class="p-faq__summary" aria-expanded="false">
+                <span class="p-faq__question">注文後、追加料金が発生する可能性はありますか？</span>
+                <span class="p-faq__icon" aria-hidden="true"></span>
+              </button>
+              <div class="p-faq__panel">
+                <div class="p-faq__answer">
+                <p class="p-faq__answer-text">ご注文内容確定後のお見積りに含まれないオプション追加や仕様変更がない限り、一方的に追加料金が発生することはありません。内容変更が生じる場合は、必ず事前にご説明しご承諾いただいてから対応します。</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-faq__item">
+              <button type="button" class="p-faq__summary" aria-expanded="false">
+                <span class="p-faq__question">相談だけでも大丈夫ですか？</span>
+                <span class="p-faq__icon" aria-hidden="true"></span>
+              </button>
+              <div class="p-faq__panel">
+                <div class="p-faq__answer">
+                <p class="p-faq__answer-text">はい、問題ありません。お見積りのみ、商品の比較検討のみでも歓迎しておりますので、どうぞお気軽にお問い合わせください。</p>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
+  <div class="p-lineup__modal" id="lineup-modal" hidden>
+    <div class="p-lineup__modalBackdrop js-lineup-modal-close" tabindex="-1" aria-hidden="true"></div>
+    <div class="p-lineup__modalDialog" role="dialog" aria-modal="true" aria-label="ラインナップ画像の拡大表示">
+      <button type="button" class="p-lineup__modalClose js-lineup-modal-close">閉じる</button>
+      <div class="swiper p-lineup__modalMain js-lineup-modal-main">
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-button-prev" aria-hidden="true"></div>
+        <div class="swiper-button-next" aria-hidden="true"></div>
+      </div>
+      <div class="swiper p-lineup__modalThumb js-lineup-modal-thumbs">
+        <div class="swiper-wrapper"></div>
+      </div>
+    </div>
+  </div>
   <footer class="p-footer">
     <div class="l-inner">
       <div class="p-footer__content">

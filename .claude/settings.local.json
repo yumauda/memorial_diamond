@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__figma-dev-mode__get_design_context",
+      "mcp__figma-dev-mode__get_screenshot",
+      "mcp__figma-dev-mode__get_variable_defs",
+      "Bash(cp /tmp/lineup_pendant_01.png /Users/yumauda/web/memorial_diamond/src/images/common/lineup_pendant_01.png)",
+      "Bash(cp /tmp/lineup_pendant_02.png /Users/yumauda/web/memorial_diamond/src/images/common/lineup_pendant_02.png)",
+      "Bash(cp /tmp/lineup_pendant_03.png /Users/yumauda/web/memorial_diamond/src/images/common/lineup_pendant_03.png)",
+      "Bash(cp /tmp/lineup_pendant_04.png /Users/yumauda/web/memorial_diamond/src/images/common/lineup_pendant_04.png)",
+      "Bash(cp /tmp/lineup_arrow.svg /Users/yumauda/web/memorial_diamond/src/images/common/lineup_arrow.svg)",
+      "Bash(npx sass *)",
+      "Bash(npx vite *)",
+      "Bash(node *)",
+      "Bash(kill bb8of7672 *)",
+      "Bash(pkill -f \"vite --port 5173\")",
+      "Bash(kill bimrg7ohr *)"
+    ]
+  }
+}
