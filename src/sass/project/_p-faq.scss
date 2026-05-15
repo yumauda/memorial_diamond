@@ -5,29 +5,43 @@
 .p-faq {
   padding-top: rem(80);
   padding-bottom: rem(80);
+  position: relative;
+  overflow-x: clip;
 
-  @include mq(md) {
-    padding-top: rem(120);
-    padding-bottom: rem(120);
-  }
+  @include mq(md) {}
 }
 
+
 .p-faq__content {
+  position: relative;
+  z-index: 2;
   width: 100%;
   max-width: rem(1080);
   margin-right: auto;
   margin-left: auto;
+  padding-top: rem(160);
+  padding-bottom: rem(128);
 }
 
-.p-faq__layout {
-  
+.p-faq__content::before {
+  position: absolute;
+  content: '';
+  background: #fff;
+  border-top-right-radius: rem(20);
+  border-bottom-right-radius: rem(20);
+  top: 0;
+  left: calc(50% - 50vw);
+  bottom: 0;
+  right: rem(-110);
+  z-index: -1;
 }
+
+.p-faq__layout {}
 
 .p-faq__head {
   text-align: left;
 
-  @include mq(lg) {
-  }
+  @include mq(lg) {}
 }
 
 .p-faq__subtitle {
@@ -76,7 +90,7 @@
   background: #f0eade;
 }
 
-.p-faq__item + .p-faq__item {
+.p-faq__item+.p-faq__item {
   margin-top: rem(16);
 }
 
@@ -183,9 +197,9 @@ $faq-ease: cubic-bezier(0.33, 1, 0.68, 1);
   opacity: 0;
   transform: translateY(rem(-6));
   transition:
-  opacity 0.42s $faq-ease 0.04s,
-  transform 0.48s $faq-ease 0.02s;
-  
+    opacity 0.42s $faq-ease 0.04s,
+    transform 0.48s $faq-ease 0.02s;
+
   @include mq(md) {
     padding-left: rem(32);
     padding-right: rem(32);
