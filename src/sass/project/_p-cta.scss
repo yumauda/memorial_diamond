@@ -30,12 +30,13 @@
   font-size: rem(30);
   font-weight: 600;
   line-height: 1.25;
-  letter-spacing: 0.06em;
+  letter-spacing: rem(8);
 }
 
 .p-cta__title span {
   display: block;
   width: rem(27);
+  min-height: rem(266);
   writing-mode: vertical-rl;
   text-orientation: mixed;
   font-feature-settings: "vert" 1;

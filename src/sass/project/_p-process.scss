@@ -75,10 +75,16 @@
 
 .p-process__list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: stretch;
-  row-gap: rem(24);
-  column-gap: rem(40);
+  row-gap: rem(16);
+  column-gap: rem(14);
+
+  @include mq(md) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    row-gap: rem(24);
+    column-gap: rem(40);
+  }
 }
 
 .p-process__item {
@@ -95,10 +101,14 @@
   flex: 1 1 auto;
   width: 100%;
   min-height: 0;
-  padding: rem(56) rem(24) rem(24);
+  padding: rem(48) rem(14) rem(18);
   border-radius: rem(15);
   background: #fbfaf9;
   box-sizing: border-box;
+
+  @include mq(md) {
+    padding: rem(56) rem(24) rem(24);
+  }
 }
 
 .p-process__badge {
@@ -109,16 +119,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: rem(47);
-  height: rem(47);
+  width: rem(40);
+  height: rem(40);
   border-radius: 0 rem(15) 0 0;
   background: #c3aa7f;
   font-family: $base-font-family;
-  font-size: rem(18);
+  font-size: rem(16);
   font-weight: 500;
   letter-spacing: 0.01em;
   line-height: 1;
   color: #fff;
+
+  @include mq(md) {
+    width: rem(47);
+    height: rem(47);
+    font-size: rem(18);
+  }
 }
 
 .p-process__texts {
@@ -131,37 +147,49 @@
 .p-process__itemTitle {
   margin: 0;
   font-family: $base-font-family;
-  font-size: rem(20);
+  font-size: rem(17);
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.03em;
   line-height: 1.7;
   color: #1f3f58;
 
   @include mq(md) {
     font-size: rem(25);
+    letter-spacing: 0.06em;
   }
 }
 
 .p-process__itemText {
-  margin-top: rem(16);
+  margin-top: rem(12);
   font-family: $base-font-family;
-  font-size: rem(16);
+  font-size: rem(13);
   font-weight: 500;
   letter-spacing: 0.01em;
   line-height: 1.7;
   color: #4a5565;
+
+  @include mq(md) {
+    margin-top: rem(16);
+    font-size: rem(16);
+  }
 }
 
 .p-process__tag {
-  margin-top: rem(16);
+  margin-top: rem(12);
   margin-bottom: 0;
-  padding: rem(6) rem(12);
+  padding: rem(5) rem(10);
   border-radius: rem(3);
   background: #c3aa7f;
   font-family: $base-font-family;
-  font-size: rem(14);
+  font-size: rem(13);
   font-weight: 500;
   letter-spacing: 0.01em;
   line-height: 1.4;
   color: #fff;
+
+  @include mq(md) {
+    margin-top: rem(16);
+    padding: rem(6) rem(12);
+    font-size: rem(14);
+  }
 }
