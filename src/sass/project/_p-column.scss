@@ -93,13 +93,14 @@
 
 .p-column__row-body {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: stretch;
   justify-content: space-between;
   margin-top: rem(24);
   color: #1f2b3f;
 
   @include mq(md) {
+    flex-direction: row;
     flex: 1 1 auto;
     margin-top: 0;
     margin-left: rem(40);
@@ -114,10 +115,17 @@
 }
 
 .p-column__row-texts {
+  order: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex: 1 1 auto;
+  margin-top: rem(20);
+
+  @include mq(md) {
+    order: 0;
+    margin-top: 0;
+  }
 }
 
 .p-column__row-text {
@@ -142,14 +150,17 @@
 }
 
 .p-column__row-titleWrap {
+  order: 1;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   align-self: flex-start;
   position: relative;
   z-index: 2;
 
   @include mq(md) {
+    order: 0;
+    flex-direction: row;
     margin-right: rem(54);
   }
 }
@@ -173,21 +184,23 @@
   object-fit: cover;
 }
 .p-column__row-title {
-  writing-mode: vertical-rl;
   font-family: $base-font-family;
   font-size: rem(20);
   font-weight: 500;
-  letter-spacing: 0.25em;
-  line-height: 1;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
 
   @include mq(md) {
+    writing-mode: vertical-rl;
     font-size: rem(25);
+    letter-spacing: 0.25em;
+    line-height: 1;
   }
 }
 
 .p-column__row-subtitle {
-  writing-mode: vertical-rl;
-  margin-left: rem(8);
+  margin-top: rem(6);
+  margin-left: 0;
   font-family: $base-font-family;
   font-size: rem(11);
   font-weight: 400;
@@ -195,6 +208,8 @@
   color: #b89968;
 
   @include mq(md) {
+    writing-mode: vertical-rl;
+    margin-top: 0;
     margin-left: rem(12);
     font-size: rem(10);
   }

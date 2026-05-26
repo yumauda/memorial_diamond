@@ -1,8 +1,8 @@
 @use "../global" as *;
 
 .p-guarantee {
-  padding-top: rem(80);
-  padding-bottom: rem(80);
+  padding-top: rem(40);
+  padding-bottom: rem(40);
   overflow-x: clip;
 
   @include mq(md) {
@@ -66,10 +66,14 @@
   object-position: center;
   position: relative;
   z-index: 2;
-
+  border-right-top-radius: rem(15);
+  
   @include mq(md) {
+    border-top-left-radius: rem(15);
+    border-bottom-left-radius: rem(15);
     min-height: rem(323);
     height: 100%;
+
   }
 }
 

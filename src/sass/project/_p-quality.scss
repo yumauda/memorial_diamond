@@ -33,9 +33,13 @@
 
 .p-quality__titleWrap {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   position: relative;
+
+  @include mq(md) {
+    flex-direction: row;
+  }
 }
 .p-quality__title-icon {
   position: absolute;
@@ -46,23 +50,23 @@
 }
 
 .p-quality__title {
-  writing-mode: vertical-rl;
-  font-feature-settings: "vpal";
   font-family: $base-font-family;
   font-size: rem(28);
   font-weight: 500;
-  letter-spacing: 0.2em;
-  line-height: 1;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
 
   @include mq(md) {
+    writing-mode: vertical-rl;
+    font-feature-settings: "vpal";
     font-size: rem(34);
+    letter-spacing: 0.2em;
+    line-height: 1;
   }
 }
 
 .p-quality__subtitle {
-  writing-mode: vertical-rl;
-  margin-left: rem(12);
-  font-feature-settings: "vpal";
+  margin-top: rem(6);
   font-family: $base-font-family;
   font-size: rem(11);
   font-weight: 400;
@@ -70,7 +74,10 @@
   color: #b89968;
 
   @include mq(md) {
+    writing-mode: vertical-rl;
+    margin-top: 0;
     margin-left: rem(16);
+    font-feature-settings: "vpal";
     font-size: rem(12);
   }
 }

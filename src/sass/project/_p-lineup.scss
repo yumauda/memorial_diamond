@@ -1,8 +1,8 @@
 @use "../global" as *;
 
 .p-lineup {
-  padding-top: rem(80);
-  padding-bottom: rem(80);
+  padding-top: rem(40);
+  padding-bottom: rem(40);
   position: relative;
   overflow-x: clip;
 
@@ -34,6 +34,8 @@
   max-width: rem(1120);
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  z-index: 3;
 }
 
 .p-lineup__head {
@@ -68,7 +70,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: rem(28);
-  margin-top: rem(58);
+  margin-top: rem(24);
 
   @include mq(md) {
     display: flex;
@@ -83,8 +85,12 @@
 
 .p-lineup__looseImage {
   width: min(100%, rem(260));
+  margin-left: auto;
+  margin-right: auto;
 
   @include mq(md) {
+    margin-left: initial;
+    margin-right: initial;
     width: rem(222);
   }
 }
@@ -127,16 +133,22 @@
 
 .p-lineup__vertical {
   position: relative;
-  display: grid;
-  grid-template-columns: auto auto;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: rem(12);
-  min-height: rem(122);
+  gap: rem(6);
+  min-height: auto;
+  margin-top: rem(24);
 
   @include mq(md) {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: start;
+    margin-top: initial;
     justify-content: end;
     gap: rem(10);
+    min-height: rem(122);
   }
 }
 
@@ -150,8 +162,11 @@
   letter-spacing: 0.01em;
   line-height: 1;
   color: #b18c4e;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
+
+  @include mq(md) {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
 }
 
 .p-lineup__verticalJp {
@@ -164,8 +179,11 @@
   letter-spacing: 0.06em;
   line-height: 1.25;
   color: #1f3f58;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
+
+  @include mq(md) {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
 }
 
 .p-lineup__verticalCircle {

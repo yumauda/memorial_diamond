@@ -93,9 +93,9 @@
 
 .p-feel__title {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   margin-top: rem(40);
   color: #1f3f58;
   font-family: $base-font-family;
@@ -103,19 +103,26 @@
   letter-spacing: 0.06em;
 
   @include mq(md) {
+    flex-direction: row-reverse;
+    align-items: flex-start;
     margin-top: rem(60);
   }
 }
 
 .p-feel__title-row {
   display: block;
-  writing-mode: vertical-rl;
-  font-feature-settings: "vpal";
   font-size: rem(22);
   font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: 0.3em;
+  line-height: 1.7;
+  letter-spacing: 0.06em;
   text-align: center;
+
+  @include mq(md) {
+    writing-mode: vertical-rl;
+    font-feature-settings: "vpal";
+    line-height: 1.25;
+    letter-spacing: 0.3em;
+  }
 }
 
 .p-feel__title-row--color {
@@ -123,7 +130,12 @@
 }
 
 .p-feel__title-row+.p-feel__title-row {
-  margin-right: rem(18);
+  margin-top: rem(4);
+
+  @include mq(md) {
+    margin-top: 0;
+    margin-right: rem(18);
+  }
 }
 
 @include mq(md) {

@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/styles.css?v=20260515">
+  <link rel="stylesheet" href="./css/styles.css?v=20260520">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
   <!-- JavaScript -->
   <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -546,11 +546,11 @@
       </div>
       <div class="l-inner">
         <div class="p-lineup__content">
-          <div class="p-lineup__head">
+          <div class="p-lineup__head js-opacity-img">
             <p class="p-lineup__subtitle" lang="en">Product lineup</p>
             <h2 class="p-lineup__title">商品ラインナップ</h2>
           </div>
-          <div class="p-lineup__loose">
+          <div class="p-lineup__loose js-opacity-img">
             <figure class="p-lineup__looseImage">
               <img decoding="async" loading="lazy" src="./images/common/lineup_loose.png" alt="ルースダイヤモンド" width="222" height="206">
             </figure>
@@ -566,7 +566,7 @@
               </div>
             </div>
           </div>
-          <div class="p-lineup__priceWrap">
+          <div class="p-lineup__priceWrap js-opacity-img">
             <table class="p-lineup__priceTable">
               <tbody>
                 <tr>
@@ -603,11 +603,11 @@
             </table>
           </div>
           <p class="p-lineup__note">※ルース（ダイヤモンドのみ）の価格になります。</p>
-          <p class="p-lineup__lead">
+          <p class="p-lineup__lead js-opacity-img">
             ジュエリーとして、より身近に。<br>
             ライフスタイルに合わせて、お好みの形をお選びいただけます。
           </p>
-          <div class="p-lineup__main">
+          <div class="p-lineup__main js-opacity-img">
             <div class="p-lineup__tabs" role="tablist" aria-label="ラインナップの種別">
               <button type="button" class="p-lineup__tab is-active js-lineup-tab" role="tab" id="lineup-tab-pendant" aria-selected="true" tabindex="0" data-lineup="pendant">ネックレス</button>
               <button type="button" class="p-lineup__tab js-lineup-tab" role="tab" id="lineup-tab-ring" aria-selected="false" tabindex="-1" data-lineup="ring">リング</button>
@@ -646,7 +646,7 @@
               </div>
             </div>
           </div>
-          <div class="p-lineup__sliders">
+          <div class="p-lineup__sliders js-opacity-img">
             <div class="p-lineup__sliderWrap is-active js-lineup-slider" data-lineup="pendant">
               <div class="swiper p-lineup__swiper js-lineup-swiper" data-lineup="pendant">
                 <div class="swiper-wrapper">
@@ -732,7 +732,10 @@
               </div>
             </div>
           </div>
-          <a class="p-lineup__button" href="mailto:infoydm@yamatanedm.co.jp">この商品について相談する</a>
+          <div class="p-lineup__button-wrapper js-opacity-img">
+
+            <a class="p-lineup__button" href="mailto:infoydm@yamatanedm.co.jp">この商品について相談する</a>
+          </div>
         </div>
       </div>
     </section>
@@ -740,16 +743,16 @@
       <div class="l-wide-inner">
         <div class="p-process__content">
           
-          <div class="p-process__head">
+          <div class="p-process__head js-opacity-img">
             <p class="p-process__subtitle" lang="en">Process after ordering</p>
             <h2 class="p-process__title">ご注文後の流れ</h2>
             <p class="p-process__lead">
-              ご注文からお届けまで、通常4〜5ヶ月程度のお時間をいただいております。
+              ご注文からお届けまで、通常4〜5ヶ月程度の<br class="u-mobile">お時間をいただいております。
             </p>
           </div>
           <div class="p-process__body">
             <ol class="p-process__list">
-              <li class="p-process__item">
+              <li class="p-process__item js-opacity-img">
                 <div class="p-process__card">
                   <span class="p-process__badge" aria-hidden="true">01</span>
                   <div class="p-process__texts">
@@ -760,7 +763,7 @@
                   </div>
                 </div>
               </li>
-              <li class="p-process__item">
+              <li class="p-process__item js-opacity-img">
                 <div class="p-process__card">
                   <span class="p-process__badge" aria-hidden="true">02</span>
                   <div class="p-process__texts">
@@ -771,7 +774,7 @@
                   </div>
                 </div>
               </li>
-              <li class="p-process__item">
+              <li class="p-process__item js-opacity-img">
                 <div class="p-process__card">
                   <span class="p-process__badge" aria-hidden="true">03</span>
                   <div class="p-process__texts">
@@ -782,7 +785,7 @@
                   </div>
                 </div>
               </li>
-              <li class="p-process__item">
+              <li class="p-process__item js-opacity-img">
                 <div class="p-process__card">
                   <span class="p-process__badge" aria-hidden="true">04</span>
                   <div class="p-process__texts">
@@ -794,7 +797,7 @@
                 </div>
               </li>
               
-              <li class="p-process__item">
+              <li class="p-process__item js-opacity-img">
                 <div class="p-process__card">
                   <span class="p-process__badge" aria-hidden="true">05</span>
                   <div class="p-process__texts">
@@ -806,7 +809,7 @@
                   </div>
                 </div>
               </li>
-              <li class="p-process__item">
+              <li class="p-process__item js-opacity-img">
                 <div class="p-process__card">
                   <span class="p-process__badge" aria-hidden="true">06</span>
                   <div class="p-process__texts">
@@ -817,7 +820,7 @@
                   </div>
                 </div>
               </li>
-              <li class="p-process__item">
+              <li class="p-process__item js-opacity-img">
                 <div class="p-process__card">
                   <span class="p-process__badge" aria-hidden="true">07</span>
                   <div class="p-process__texts">
@@ -828,7 +831,7 @@
                   </div>
                 </div>
               </li>
-              <li class="p-process__item">
+              <li class="p-process__item js-opacity-img">
                 <div class="p-process__card">
                   <span class="p-process__badge" aria-hidden="true">08</span>
                   <div class="p-process__texts">
@@ -877,7 +880,7 @@
       </div>
       <div class="l-inner">
         <div class="p-double__content">
-          <article class="p-double__panel">
+          <article class="p-double__panel js-opacity-img">
             <div class="p-double__frame">
               <div class="p-double__icon" aria-hidden="true">
                 <svg viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -892,7 +895,7 @@
               </p>
             </div>
           </article>
-          <article class="p-double__panel">
+          <article class="p-double__panel js-opacity-img">
             <div class="p-double__frame">
               <div class="p-double__icon" aria-hidden="true">
                 <svg viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -918,7 +921,7 @@
               <h2 class="p-faq__title">よくあるご質問</h2>
             </div>
             <div class="p-faq__list">
-            <div class="p-faq__item">
+            <div class="p-faq__item js-opacity-img">
               <button type="button" class="p-faq__summary" aria-expanded="false">
                 <span class="p-faq__question">本当に同じ炭素から作られているのですか？</span>
                 <span class="p-faq__icon" aria-hidden="true"></span>
@@ -929,7 +932,7 @@
                 </div>
               </div>
             </div>
-            <div class="p-faq__item">
+            <div class="p-faq__item js-opacity-img">
               <button type="button" class="p-faq__summary" aria-expanded="false">
                 <span class="p-faq__question">どれくらいの量を預ける必要がありますか？</span>
                 <span class="p-faq__icon" aria-hidden="true"></span>
@@ -940,7 +943,7 @@
                 </div>
               </div>
             </div>
-            <div class="p-faq__item">
+            <div class="p-faq__item js-opacity-img">
               <button type="button" class="p-faq__summary" aria-expanded="false">
                 <span class="p-faq__question">製造にどのくらい時間がかかりますか？</span>
                 <span class="p-faq__icon" aria-hidden="true"></span>
@@ -951,7 +954,7 @@
                 </div>
               </div>
             </div>
-            <div class="p-faq__item">
+            <div class="p-faq__item js-opacity-img">
               <button type="button" class="p-faq__summary" aria-expanded="false">
                 <span class="p-faq__question">天然ダイヤモンドとの違いは何ですか？</span>
                 <span class="p-faq__icon" aria-hidden="true"></span>
@@ -962,7 +965,7 @@
                 </div>
               </div>
             </div>
-            <div class="p-faq__item">
+            <div class="p-faq__item js-opacity-img">
               <button type="button" class="p-faq__summary" aria-expanded="false">
                 <span class="p-faq__question">色は選べますか？</span>
                 <span class="p-faq__icon" aria-hidden="true"></span>
@@ -973,7 +976,7 @@
                 </div>
               </div>
             </div>
-            <div class="p-faq__item">
+            <div class="p-faq__item js-opacity-img">
               <button type="button" class="p-faq__summary" aria-expanded="false">
                 <span class="p-faq__question">遺骨は全て使われてしまいますか？</span>
                 <span class="p-faq__icon" aria-hidden="true"></span>
@@ -984,7 +987,7 @@
                 </div>
               </div>
             </div>
-            <div class="p-faq__item">
+            <div class="p-faq__item js-opacity-img">
               <button type="button" class="p-faq__summary" aria-expanded="false">
                 <span class="p-faq__question">ペットの遺骨からも作れますか？</span>
                 <span class="p-faq__icon" aria-hidden="true"></span>
@@ -995,7 +998,7 @@
                 </div>
               </div>
             </div>
-            <div class="p-faq__item">
+            <div class="p-faq__item js-opacity-img">
               <button type="button" class="p-faq__summary" aria-expanded="false">
                 <span class="p-faq__question">アフターサービスはありますか？</span>
                 <span class="p-faq__icon" aria-hidden="true"></span>
@@ -1006,7 +1009,7 @@
                 </div>
               </div>
             </div>
-            <div class="p-faq__item">
+            <div class="p-faq__item js-opacity-img">
               <button type="button" class="p-faq__summary" aria-expanded="false">
                 <span class="p-faq__question">支払い方法は何がありますか？</span>
                 <span class="p-faq__icon" aria-hidden="true"></span>
@@ -1017,7 +1020,7 @@
                 </div>
               </div>
             </div>
-            <div class="p-faq__item">
+            <div class="p-faq__item js-opacity-img">
               <button type="button" class="p-faq__summary" aria-expanded="false">
                 <span class="p-faq__question">注文後、追加料金が発生する可能性はありますか？</span>
                 <span class="p-faq__icon" aria-hidden="true"></span>
@@ -1028,7 +1031,7 @@
                 </div>
               </div>
             </div>
-            <div class="p-faq__item">
+            <div class="p-faq__item js-opacity-img">
               <button type="button" class="p-faq__summary" aria-expanded="false">
                 <span class="p-faq__question">相談だけでも大丈夫ですか？</span>
                 <span class="p-faq__icon" aria-hidden="true"></span>
@@ -1051,14 +1054,14 @@
             <span aria-hidden="true">ご相談ください</span>
             <span aria-hidden="true">まずはお気軽に</span>
           </h2>
-          <p class="p-cta__lead">
+          <p class="p-cta__lead js-opacity-img">
             大切な想いを形にする<br>
             お手伝いをさせていただきます。<br>
-            専門スタッフが丁寧にご説明いたしますので、<br>
+            専門スタッフが丁寧に<br class="u-mobile">ご説明いたしますので、<br>
             どんな些細なことでも<br>
             お気軽にお問い合わせください。
           </p>
-          <a class="p-cta__button" href="mailto:infoydm@yamatanedm.co.jp">
+          <a class="p-cta__button js-opacity-img" href="mailto:infoydm@yamatanedm.co.jp">
             <span class="p-cta__button-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="5" width="18" height="14" rx="1.8"/>
@@ -1068,9 +1071,9 @@
             <span class="p-cta__button-text">無料相談を申し込む</span>
           </a>
           <p class="p-cta__note">
-            営業時間：平日 10:00〜18:00（土日祝日は事前予約制）<br>
-            ※ご相談は完全無料です。まずはお気軽にお問い合わせください。<br>
-            ※しつこい営業や勧誘は一切いたしません。ご安心ください。
+            営業時間：平日 10:00〜18:00<br class="u-mobile">（土日祝日は事前予約制）<br>
+            ※ご相談は完全無料です。<br class="u-mobile">まずはお気軽にお問い合わせください。<br>
+            ※しつこい営業や勧誘は一切いたしません。<br class="u-mobile">ご安心ください。
           </p>
         </div>
       </div>

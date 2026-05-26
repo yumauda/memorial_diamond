@@ -1,8 +1,8 @@
 @use "../global" as *;
 
 .p-cta {
-  padding-top: rem(80);
-  padding-bottom: rem(80);
+  padding-top: rem(48);
+  padding-bottom: rem(48);
 
   @include mq(md) {
     padding-top: rem(120);
@@ -22,6 +22,7 @@
 
 .p-cta__title {
   display: flex;
+  flex-direction: column;
   gap: rem(18);
   justify-content: center;
   margin: 0;
@@ -29,17 +30,26 @@
   font-family: $base-font-family;
   font-size: rem(30);
   font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: rem(8);
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+
+  @include mq(md) {
+    flex-direction: row;
+    line-height: 1.25;
+    letter-spacing: rem(8);
+  }
 }
 
 .p-cta__title span {
   display: block;
-  width: rem(27);
-  min-height: rem(266);
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  font-feature-settings: "vert" 1;
+
+  @include mq(md) {
+    width: rem(27);
+    min-height: rem(266);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-feature-settings: "vert" 1;
+  }
 }
 
 .p-cta__lead {
@@ -102,11 +112,15 @@
 }
 
 .p-cta__note {
-  margin-top: rem(36);
   color: #1f3f58;
   font-family: $base-font-family;
-  font-size: rem(15);
   font-weight: 500;
   line-height: 1.7;
   letter-spacing: 0.01em;
+  font-size: rem(14);
+  margin-top: rem(24);
+  @include mq(md){
+    margin-top: rem(36);
+    font-size: rem(15);
+  }
 }

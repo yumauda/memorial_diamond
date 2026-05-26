@@ -1,8 +1,8 @@
 @use "../global" as *;
 
 .p-process {
-  padding-top: rem(80);
-  padding-bottom: rem(80);
+  padding-top: rem(40);
+  padding-bottom: rem(40);
   overflow-x: clip;
 
   @include mq(md) {
@@ -187,7 +187,12 @@
 }
 
 .p-process__itemTitle span {
-  font-size: rem(22);
+  font-size: rem(14);
+
+  @include mq(md) {
+
+    font-size: rem(22);
+  }
 }
 
 .p-process__itemText {
