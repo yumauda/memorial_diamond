@@ -43,6 +43,28 @@ bgWaves.forEach((bgWave) => {
     }
   );
 });
+let bgWaves2 = document.querySelectorAll('.js-wave2');
+
+bgWaves2.forEach((bgWave2) => {
+  gsap.fromTo(  
+    bgWave2,
+    {
+      opacity: 0,
+      clipPath: "inset(0% 0% 100% 0%)",
+    },
+    {
+      opacity: 1,
+      clipPath: "inset(0% 0% 0% 0%)",
+      duration: 4,
+      ease: 'power2.inOut',
+      zIndex: 1,
+      scrollTrigger: {
+        trigger: bgWave2,
+        start: 'top 90%',
+      },
+    }
+  );
+});
 
 let opacityWords = document.querySelectorAll('.js-opacity-word');
 

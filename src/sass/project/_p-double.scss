@@ -1,22 +1,38 @@
 @use "../global" as *;
 
 .p-double {
-  padding-top: rem(80);
   padding-bottom: rem(80);
+  position: relative;
+  overflow-x: clip;
 
   @include mq(md) {
-    padding-top: rem(120);
     padding-bottom: rem(120);
   }
 }
+.p-double__wave {
+  position: absolute;
+  top: rem(-300);
+  width: 100vw;
+  right: calc(50% - 50vw);
+  left: calc(50% - 50vw);
+  z-index: 2;
+}
+.p-double__circle {
+  position: absolute;
+  width: rem(109);
 
+  right: rem(24);
+  top: rem(-190);
+  z-index: 2;
+}
 .p-double__content {
   display: flex;
   flex-direction: column;
   max-width: rem(1080);
   margin-right: auto;
   margin-left: auto;
-
+  position: relative;
+  z-index: 3;
   @include mq(md) {
     flex-direction: row;
     align-items: stretch;

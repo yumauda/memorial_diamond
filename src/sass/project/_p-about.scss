@@ -3,17 +3,24 @@
 .p-about {
   padding-top: rem(80);
   padding-bottom: rem(80);
+  overflow-x: clip;
 
   @include mq(md) {
     padding-top: rem(120);
-    padding-bottom: rem(120);
+    padding-bottom: rem(96);
   }
 }
 
 .p-about__content {
   color: #1f2b3f;
+  position: relative;
 }
-
+.p-about__wave {
+  position: absolute;
+  top: rem(360);
+  width: rem(1038);
+  left: rem(400);
+}
 .p-about__head {
   display: flex;
   flex-direction: column;
@@ -100,7 +107,7 @@
   aspect-ratio: 42 / 42;
   object-fit: cover;
   z-index: 2;
-  top: rem(32);
+  top: rem(20);
   left: rem(8);
 }
 .p-about__item+.p-about__item {

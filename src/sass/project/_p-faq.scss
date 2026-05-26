@@ -6,6 +6,7 @@
   padding-top: rem(80);
   padding-bottom: rem(80);
   position: relative;
+  z-index: 1;
   overflow-x: clip;
 
   @include mq(md) {}

@@ -3,15 +3,23 @@
 .p-material {
   padding-top: rem(80);
   padding-bottom: rem(80);
+  overflow-x: clip;
 
   @include mq(md) {
-    padding-top: rem(120);
+    padding-top: initial;
     padding-bottom: rem(120);
   }
 }
 
 .p-material__content {
   color: #1f2b3f;
+  position: relative;
+}
+.p-material__icon {
+  position: absolute;
+  right: rem(-140);
+  bottom: rem(-300);
+  width: rem(163);
 }
 
 .p-material__head {
@@ -58,6 +66,7 @@
     margin-top: rem(32);
     padding: rem(40) rem(60);
     max-width: rem(740);
+    border-radius: rem(15);
     margin-right: auto;
     margin-left: auto;
   }
@@ -81,7 +90,7 @@
   }
 }
 
-.p-material__item + .p-material__item {
+.p-material__item+.p-material__item {
   margin-top: rem(28);
   padding-top: rem(28);
   border-top: 1px solid rgba(#fff, 0.55);
