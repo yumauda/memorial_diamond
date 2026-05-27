@@ -49,8 +49,24 @@
 
 .p-faq__head {
   text-align: left;
+  position: relative;
 
-  @include mq(lg) {}
+}
+.p-faq__circle--1 {
+  position: absolute;
+  top: rem(-100);
+  left: rem(32);
+  width: rem(26);
+  height: auto;
+  z-index: 2;
+}
+.p-faq__circle--2 {
+  position: absolute;
+  top: rem(250);
+  left: rem(56);
+  width: rem(36);
+  height: auto;
+  z-index: 2;
 }
 
 .p-faq__subtitle {

@@ -618,12 +618,31 @@ select::-ms-expand {
 .p-cta {
   padding-top: 3rem;
   padding-bottom: 3rem;
+  overflow-x: clip;
+  position: relative;
 }
 @media screen and (min-width: 768px) {
   .p-cta {
     padding-top: 7.5rem;
     padding-bottom: 10.75rem;
   }
+}
+
+.p-cta__wave {
+  position: absolute;
+  top: -28.125rem;
+  left: 0;
+  width: 28.75rem;
+  height: auto;
+  z-index: 2;
+}
+
+.p-cta__circle {
+  position: absolute;
+  width: 3.875rem;
+  left: 6.875rem;
+  top: 5rem;
+  z-index: 2;
 }
 
 .p-cta__content {
@@ -927,7 +946,27 @@ select::-ms-expand {
 
 .p-faq__head {
   text-align: left;
+  position: relative;
 }
+
+.p-faq__circle--1 {
+  position: absolute;
+  top: -6.25rem;
+  left: 2rem;
+  width: 1.625rem;
+  height: auto;
+  z-index: 2;
+}
+
+.p-faq__circle--2 {
+  position: absolute;
+  top: 15.625rem;
+  left: 3.5rem;
+  width: 2.25rem;
+  height: auto;
+  z-index: 2;
+}
+
 .p-faq__subtitle {
   font-family: "Shippori Mincho", "Yu Mincho", "YuMincho", serif;
   font-size: 0.75rem;
@@ -1299,16 +1338,37 @@ select::-ms-expand {
 
 .p-footer {
   position: relative;
+  z-index: 4;
   display: flex;
   align-items: center;
   min-height: 6.25rem;
   background: #b18c4e;
+  overflow-x: clip;
 }
 
 .p-footer__content {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 3;
+}
+
+.p-footer__wave {
+  position: absolute;
+  top: -11.25rem;
+  right: 0rem;
+  width: 18.875rem;
+  height: auto;
+  z-index: 1;
+}
+
+.p-footer__circle {
+  position: absolute;
+  top: -9.375rem;
+  right: 0;
+  width: 5.3125rem;
+  z-index: 2;
 }
 
 .p-footer__logo {

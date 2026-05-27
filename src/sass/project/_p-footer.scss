@@ -2,18 +2,37 @@
 
 .p-footer {
   position: relative;
+  z-index: 4;
   display: flex;
   align-items: center;
   min-height: rem(100);
   background: #b18c4e;
+  overflow-x: clip;
 }
 
 .p-footer__content {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 3;
+}
+.p-footer__wave {
+  position: absolute;
+  top: rem(-180);
+  right: rem(0);
+  width: rem(302);
+  height: auto;
+  z-index: 1;
 }
 
+.p-footer__circle {
+  position: absolute;
+  top: rem(-150);
+  right: 0;
+  width: rem(85);
+  z-index: 2;
+}
 .p-footer__logo {
   display: flex;
   justify-content: center;

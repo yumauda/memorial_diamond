@@ -3,13 +3,29 @@
 .p-cta {
   padding-top: rem(48);
   padding-bottom: rem(48);
-
+  overflow-x: clip;
+  position: relative;
   @include mq(md) {
     padding-top: rem(120);
     padding-bottom: rem(172);
   }
 }
 
+.p-cta__wave {
+  position: absolute;
+  top: rem(-450);
+  left: 0;
+  width: rem(460);
+  height: auto;
+  z-index: 2;
+}
+.p-cta__circle {
+  position: absolute;
+  width: rem(62);
+  left: rem(110);
+  top: rem(80);
+  z-index: 2;
+}
 .p-cta__content {
   display: flex;
   flex-direction: column;
