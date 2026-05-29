@@ -21,6 +21,32 @@
 - スマホファーストが前提の仕様です。
 - rem記述を前提としています。
 - ルートフォントをvwで設定していることからPCサイズのレイアウトをタブレットで表示させることが出来ます（remで書いた場合のみ）。
+
+## Xserver テストアップ
+
+静的HTML / PHPサイトをXserverのテスト環境へアップロードする場合は、以下を使用します。
+
+1. `.env.example` をコピーして `.env` を作成する
+2. `.env` にXserverの接続情報、アップロード元、テストアップ先を設定する
+3. 必要に応じて `npm run build` で `dist` を生成する
+4. `npm run deploy:test` を実行する
+
+`.env` の `LOCAL_BUILD_DIR` にはアップロードするローカルディレクトリを指定します。このプロジェクトのViteビルド結果をアップロードする場合は `dist` を指定してください。
+
+```env
+LOCAL_BUILD_DIR=dist
+REMOTE_TEST_PATH=/home/xxxxx/example.com/public_html/project-name
+TEST_URL=https://example.com/project-name/
+```
+
+`REMOTE_TEST_PATH` は必ず `public_html` 配下のサブディレクトリにしてください。`public_html` 直下など本番相当のパスはスクリプト側で停止します。
+
+アップロード後、テストURLにはBasic認証が設定されます。
+
+```txt
+ID: test
+PASS: 0000
+```
 # tankenvironment
 # tank_viteEnvironment
 # hako_scan

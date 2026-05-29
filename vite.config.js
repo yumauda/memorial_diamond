@@ -8,6 +8,7 @@ const __dirname = dirname(__filename);
 export default defineConfig({
   plugins: [],
   root: './',
+  base: './',
   publicDir: false, // publicディレクトリを使わない
   build: {
     outDir: 'dist',

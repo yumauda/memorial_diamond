@@ -12,7 +12,8 @@
     "dev:images": "chokidar \"src/images/**/*\" -c \"npm run compress:images\"",
     "compress:images": "node scripts/compress-images.js",
     "generate:styles": "node scripts/generate-styles.js",
-    "build": "vite build",
+    "deploy:test": "bash scripts/deploy-test.sh",
+    "build": "vite build && node scripts/copy-static-assets.js",
     "preview": "vite preview"
   },
   "author": "",

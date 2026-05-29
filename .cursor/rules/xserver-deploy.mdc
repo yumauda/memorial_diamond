@@ -1,0 +1,16 @@
+---
+description: Xserver test deployment rules for static HTML / PHP sites
+globs:
+  - "**/*"
+alwaysApply: false
+---
+
+# Xserver Test Deploy
+
+- 「テストアップして」と依頼されたら `npm run deploy:test` を使う。
+- 本番環境には勝手にアップロードしない。
+- `.env` や秘密鍵の中身を表示しない。
+- Basic認証は `test / 0000` を使用する。
+- Basic認証なしでテストURLを公開しない。
+- 作業後はURLとBasic認証情報 `test / 0000` を案内する。
+- まず既存のファイル構成を確認してから、必要なファイルを追加・修正する。
