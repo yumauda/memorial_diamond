@@ -268,6 +268,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     let modalMainSwiper = null;
     let modalThumbSwiper = null;
     let lastFocusEl = null;
+    let modalCloseTimer = null;
 
     function escapeHtml(str) {
       return String(str)
@@ -293,13 +294,19 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
     function closeLineupModal() {
       if ($lineupModal.prop('hidden')) return;
-      destroyModalSwipers();
-      $lineupModal.prop('hidden', true);
+      $(document).off('keydown.lineupModal');
+      $lineupModal.removeClass('is-visible');
       $('body').css('overflow', '');
-      if (lastFocusEl) {
-        lastFocusEl.focus();
-        lastFocusEl = null;
-      }
+
+      window.clearTimeout(modalCloseTimer);
+      modalCloseTimer = window.setTimeout(function () {
+        destroyModalSwipers();
+        $lineupModal.prop('hidden', true);
+        if (lastFocusEl) {
+          lastFocusEl.focus();
+          lastFocusEl = null;
+        }
+      }, 280);
     }
 
     function initLineupSwiper($root) {
@@ -416,6 +423,8 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       const $mainWrap = $lineupModal.find('.js-lineup-modal-main .swiper-wrapper');
       const $thumbWrap = $lineupModal.find('.js-lineup-modal-thumbs .swiper-wrapper');
 
+      window.clearTimeout(modalCloseTimer);
+      $lineupModal.removeClass('is-visible');
       destroyModalSwipers();
 
       slides.forEach(function (item) {
@@ -474,6 +483,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       });
 
       window.requestAnimationFrame(function () {
+        $lineupModal.addClass('is-visible');
         modalMainSwiper.update();
         modalThumbSwiper.update();
       });

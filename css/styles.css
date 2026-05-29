@@ -2289,6 +2289,14 @@ select::-ms-expand {
   align-items: center;
   justify-content: center;
   padding: 1.25rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.28s ease, visibility 0.28s ease;
+}
+
+.p-lineup__modal.is-visible {
+  opacity: 1;
+  visibility: visible;
 }
 
 .p-lineup__modalBackdrop {
@@ -2296,6 +2304,7 @@ select::-ms-expand {
   inset: 0;
   background: rgba(17, 17, 17, 0.72);
   cursor: pointer;
+  transition: opacity 0.28s ease;
 }
 
 .p-lineup__modalDialog {
@@ -2309,6 +2318,12 @@ select::-ms-expand {
   background: #f7f6f4;
   overflow: auto;
   box-sizing: border-box;
+  transform: translateY(0.625rem) scale(0.98);
+  transition: transform 0.28s ease;
+}
+
+.p-lineup__modal.is-visible .p-lineup__modalDialog {
+  transform: translateY(0) scale(1);
 }
 
 .p-lineup__modalClose {
@@ -2336,6 +2351,20 @@ select::-ms-expand {
   margin-top: 2rem;
   overflow: hidden;
   border-radius: 0.5rem;
+}
+
+.p-lineup__modalMain .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-lineup__modalMain img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: min(64vh, 40rem);
+  object-fit: contain;
 }
 
 .p-lineup__modalMain .swiper-button-prev,
@@ -2377,7 +2406,7 @@ select::-ms-expand {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .p-material {
