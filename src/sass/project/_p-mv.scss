@@ -17,13 +17,15 @@
 }
 
 .p-mv__img img {
-  aspect-ratio: 1440 / 750;
+  aspect-ratio: 1440 / 1440;
   object-fit: cover;
   width: 100%;
   height: auto;
+  object-position: 90%;
 
   @include mq(md) {
     aspect-ratio: 1440 / 750;
+    object-position: center;
   }
 }
 
