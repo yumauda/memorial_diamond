@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "deploy:test": "bash scripts/deploy-test.sh"
+  }
+}

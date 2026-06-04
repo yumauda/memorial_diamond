@@ -90,16 +90,39 @@ let splitTexts = document.querySelectorAll('.js-split-text');
 
 splitTexts.forEach((splitText) => {
   const text = splitText.textContent.trim();
+  const originalNodes = Array.from(splitText.childNodes);
   splitText.setAttribute('aria-label', text);
   splitText.textContent = '';
 
-  Array.from(text).forEach((char) => {
-    const span = document.createElement('span');
-    span.className = 'js-split-text-char';
-    span.setAttribute('aria-hidden', 'true');
-    span.style.display = 'inline-block';
-    span.textContent = char;
-    splitText.appendChild(span);
+  const splitNode = (node) => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      const fragment = document.createDocumentFragment();
+      Array.from(node.textContent).forEach((char) => {
+        if (!char.trim()) return;
+
+        const span = document.createElement('span');
+        span.className = 'js-split-text-char';
+        span.setAttribute('aria-hidden', 'true');
+        span.style.display = 'inline-block';
+        span.textContent = char;
+        fragment.appendChild(span);
+      });
+      return fragment;
+    }
+
+    if (node.nodeType === Node.ELEMENT_NODE) {
+      const clone = node.cloneNode(false);
+      Array.from(node.childNodes).forEach((childNode) => {
+        clone.appendChild(splitNode(childNode));
+      });
+      return clone;
+    }
+
+    return document.createDocumentFragment();
+  };
+
+  originalNodes.forEach((node) => {
+    splitText.appendChild(splitNode(node));
   });
 
   gsap.fromTo(
@@ -266,6 +289,25 @@ opacityImgs.forEach((opacityImg) => {
         trigger: opacityImg,
         start: 'top bottom',
         end: 'bottom top',
+      },
+    }
+  );
+});
+let opacityDelays = document.querySelectorAll('.js-opacity-img--delay');
+
+opacityDelays.forEach((opacityDelay) => {
+  gsap.fromTo(
+    opacityDelay,
+    {
+      opacity: 0,
+    },
+    {
+      opacity: 1,
+      duration: 1,
+      ease: 'power2.inOut',
+      scrollTrigger: {
+        trigger: opacityDelay,
+        start: 'top 70%',
       },
     }
   );

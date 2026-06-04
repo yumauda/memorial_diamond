@@ -16,6 +16,7 @@
   right: calc(50% - 50vw);
   left: calc(50% - 50vw);
   z-index: 2;
+  pointer-events: none;
 }
 .p-double__circle {
   position: absolute;
@@ -24,6 +25,7 @@
   right: rem(24);
   top: rem(-190);
   z-index: 2;
+  pointer-events: none;
 }
 .p-double__content {
   display: flex;

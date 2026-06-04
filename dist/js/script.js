@@ -270,13 +270,22 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     let lastFocusEl = null;
     let modalCloseTimer = null;
 
-    function escapeHtml(str) {
-      return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
-    }
+	    function escapeHtml(str) {
+	      return String(str)
+	        .replace(/&/g, '&amp;')
+	        .replace(/</g, '&lt;')
+	        .replace(/>/g, '&gt;')
+	        .replace(/"/g, '&quot;')
+	        .replace(/'/g, '&#39;');
+	    }
+
+	    function setModalDetail(item) {
+	      if (!item) return;
+	      $lineupModal.find('.js-lineup-modal-title').text(item.title || '');
+	      $lineupModal.find('.js-lineup-modal-type').text(item.type || '');
+	      $lineupModal.find('.js-lineup-modal-number').text(item.number || '');
+	      $lineupModal.find('.js-lineup-modal-size').text(item.size || '');
+	    }
 
     function destroyModalSwipers() {
       $(document).off('keydown.lineupModal');
@@ -299,15 +308,12 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       $('body').css('overflow', '');
 
       window.clearTimeout(modalCloseTimer);
-      modalCloseTimer = window.setTimeout(function () {
-        destroyModalSwipers();
-        $lineupModal.prop('hidden', true);
-        if (lastFocusEl) {
-          lastFocusEl.focus();
-          lastFocusEl = null;
-        }
-      }, 280);
-    }
+	      modalCloseTimer = window.setTimeout(function () {
+	        destroyModalSwipers();
+	        $lineupModal.prop('hidden', true);
+	        lastFocusEl = null;
+	      }, 280);
+	    }
 
     function initLineupSwiper($root) {
       const key = $root.attr('data-lineup');
@@ -405,20 +411,50 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       e.preventDefault();
       if (typeof Swiper === 'undefined') return;
 
-      const $btn = $(this);
-      const $swiperRoot = $btn.closest('.js-lineup-swiper');
-      const slideIndex = $btn.closest('.swiper-slide').index();
+	      const $btn = $(this);
+	      const $swiperRoot = $btn.closest('.js-lineup-swiper');
+	      const slideAttrIndex = $btn.closest('.swiper-slide').attr('data-swiper-slide-index');
+	      let slideIndex = slideAttrIndex !== undefined ? Number(slideAttrIndex) : $btn.closest('.swiper-slide').index();
 
-      const slides = [];
-      $swiperRoot.find('.js-lineup-slide-img').each(function () {
-        const el = this;
-        slides.push({
-          src: el.getAttribute('src') || '',
-          alt: el.getAttribute('alt') || '',
-          width: el.getAttribute('width') || '640',
-          height: el.getAttribute('height') || '420',
-        });
-      });
+	      let slides = [];
+	      const modalImages = ($btn.attr('data-modal-images') || '')
+	        .split('|')
+	        .map(function (src) {
+	          return src.trim();
+	        })
+	        .filter(Boolean);
+
+	      if (modalImages.length) {
+	        slideIndex = 0;
+        const modalTypeLabel = $btn.attr('data-lineup-type') || $btn.attr('data-lineup-title') || '商品';
+        modalImages.forEach(function (src, index) {
+          slides.push({
+            src: src,
+            alt: ($btn.attr('data-product-number') || '') + ' ' + modalTypeLabel + ' 画像' + (index + 1),
+            width: '945',
+            height: '945',
+	            title: $btn.attr('data-lineup-title') || 'Product detail',
+	            type: $btn.attr('data-lineup-type') || '',
+	            number: $btn.attr('data-product-number') || '',
+	            size: $btn.attr('data-diamond-size') || '',
+	          });
+	        });
+	      } else {
+	        $swiperRoot.find('.swiper-slide:not(.swiper-slide-duplicate) .js-lineup-slide-img').each(function () {
+	          const el = this;
+	          const $itemBtn = $(el).closest('.js-lineup-open-modal');
+	          slides.push({
+	            src: el.getAttribute('src') || '',
+	            alt: el.getAttribute('alt') || '',
+	            width: el.getAttribute('width') || '640',
+	            height: el.getAttribute('height') || '420',
+	            title: $itemBtn.attr('data-lineup-title') || 'Product detail',
+	            type: $itemBtn.attr('data-lineup-type') || '',
+	            number: $itemBtn.attr('data-product-number') || '',
+	            size: $itemBtn.attr('data-diamond-size') || '',
+	          });
+	        });
+	      }
 
       const $mainWrap = $lineupModal.find('.js-lineup-modal-main .swiper-wrapper');
       const $thumbWrap = $lineupModal.find('.js-lineup-modal-thumbs .swiper-wrapper');
@@ -460,17 +496,25 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         watchSlidesProgress: true,
       });
 
-      modalMainSwiper = new Swiper(mainEl, {
-        initialSlide: Math.max(0, slideIndex),
-        spaceBetween: 10,
-        navigation: {
+	      modalMainSwiper = new Swiper(mainEl, {
+	        initialSlide: Math.max(0, slideIndex),
+	        spaceBetween: 10,
+	        navigation: {
           nextEl: $lineupModal.find('.js-lineup-modal-main .swiper-button-next')[0],
           prevEl: $lineupModal.find('.js-lineup-modal-main .swiper-button-prev')[0],
         },
-        thumbs: {
-          swiper: modalThumbSwiper,
-        },
-      });
+	        thumbs: {
+	          swiper: modalThumbSwiper,
+	        },
+	        on: {
+	          init: function () {
+	            setModalDetail(slides[this.realIndex] || slides[this.activeIndex]);
+	          },
+	          slideChange: function () {
+	            setModalDetail(slides[this.realIndex] || slides[this.activeIndex]);
+	          },
+	        },
+	      });
 
       lastFocusEl = this;
       $lineupModal.prop('hidden', false);

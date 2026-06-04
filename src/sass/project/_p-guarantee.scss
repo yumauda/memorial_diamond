@@ -47,6 +47,7 @@
     min-height: rem(323);
   }
 }
+
 .p-guarantee__wave {
   position: absolute;
   top: rem(-303);
@@ -67,7 +68,7 @@
   position: relative;
   z-index: 2;
   border-right-top-radius: rem(15);
-  
+
   @include mq(md) {
     border-top-left-radius: rem(15);
     border-bottom-left-radius: rem(15);
@@ -80,7 +81,7 @@
 .p-guarantee__body {
   position: relative;
   flex: 1 1 auto;
-  padding: rem(32) rem(24) rem(32);
+  padding: rem(32) rem(16) rem(32);
 
   @include mq(md) {
     padding: rem(40) rem(24) rem(40) rem(40);
@@ -94,8 +95,6 @@
   flex-direction: row;
   align-items: flex-start;
   width: fit-content;
-  margin-left: auto;
-  padding: 0 rem(24);
   border-radius: rem(15);
   font-family: $base-font-family;
   font-size: rem(26);
@@ -105,6 +104,7 @@
 
   @include mq(md) {
     position: absolute;
+    padding: 0 rem(24);
     top: rem(40);
     right: rem(24);
     margin-left: 0;
@@ -113,20 +113,29 @@
 }
 
 .p-guarantee__badgeLine {
-  display: block;
+  display: none;
   flex: 0 0 auto;
   width: auto;
   text-align: center;
   line-height: 1.3;
 
   @include mq(md) {
+    display: block;
     flex: 0 0 rem(27);
     width: rem(27);
   }
 }
 
-.p-guarantee__badgeLine + .p-guarantee__badgeLine {
+.p-guarantee__badgeLine+.p-guarantee__badgeLine {
   margin-left: rem(12);
+}
+
+.p-guarantee__badgeText {
+  display: block;
+
+  @include mq(md) {
+    display: none;
+  }
 }
 
 .p-guarantee__copy {
@@ -151,6 +160,6 @@
   }
 }
 
-.p-guarantee__text + .p-guarantee__text {
+.p-guarantee__text+.p-guarantee__text {
   margin-top: rem(16);
 }

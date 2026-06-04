@@ -48,9 +48,11 @@
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: 0.06em;
+  position: relative;
+  z-index: 10;
 
   @include mq(md) {
-    flex-direction: row;
+    flex-direction: row-reverse;
     line-height: 1.25;
     letter-spacing: rem(8);
   }
@@ -75,11 +77,15 @@
   font-weight: 500;
   line-height: 2;
   letter-spacing: 0.01em;
+  position: relative;
+  z-index: 10;
   margin-top: rem(40);
 }
 
 .p-cta__button {
-  display: inline-flex;
+  display: flex;
+  position: relative;
+  z-index: 10;
   align-items: center;
   justify-content: center;
   gap: rem(7);
@@ -132,6 +138,8 @@
   font-family: $base-font-family;
   font-weight: 500;
   line-height: 1.7;
+  position: relative;
+  z-index: 10;
   letter-spacing: 0.01em;
   font-size: rem(14);
   margin-top: rem(24);
