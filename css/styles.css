@@ -212,8 +212,7 @@ select::-ms-expand {
 }
 
 .p-about {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-bottom: 2.5rem;
   overflow-x: clip;
 }
 @media screen and (min-width: 768px) {
@@ -230,9 +229,16 @@ select::-ms-expand {
 
 .p-about__wave {
   position: absolute;
-  top: 22.5rem;
-  width: 64.875rem;
-  left: 25rem;
+  top: 7.5rem;
+  width: 27.5rem;
+  left: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .p-about__wave {
+    top: 22.5rem;
+    width: 64.875rem;
+    left: 25rem;
+  }
 }
 
 .p-about__head {
@@ -405,20 +411,32 @@ select::-ms-expand {
 .p-column__wave {
   position: absolute;
   z-index: 2;
-  top: 31.25rem;
   left: -6rem;
-  width: 61.875rem;
+  width: 25rem;
+  top: 7.5rem;
   height: auto;
   aspect-ratio: 990/1596;
   object-fit: cover;
   object-fit: cover;
   object-position: center;
 }
+@media screen and (min-width: 768px) {
+  .p-column__wave {
+    width: 61.875rem;
+    top: 31.25rem;
+  }
+}
 
 .p-column .l-wide-inner {
   position: relative;
-  padding-top: 10.5rem;
-  padding-bottom: 8rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+@media screen and (min-width: 768px) {
+  .p-column .l-wide-inner {
+    padding-top: 10.5rem;
+    padding-bottom: 8rem;
+  }
 }
 
 .p-column .l-wide-inner::before {
@@ -452,7 +470,12 @@ select::-ms-expand {
 }
 
 .p-column__row + .p-column__row {
-  margin-top: 5.5rem;
+  margin-top: 2.5rem;
+}
+@media screen and (min-width: 768px) {
+  .p-column__row + .p-column__row {
+    margin-top: 5.5rem;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -616,7 +639,6 @@ select::-ms-expand {
 }
 
 .p-cta {
-  padding-top: 3rem;
   padding-bottom: 3rem;
   overflow-x: clip;
   position: relative;
@@ -630,11 +652,17 @@ select::-ms-expand {
 
 .p-cta__wave {
   position: absolute;
-  top: -28.125rem;
   left: 0;
-  width: 28.75rem;
   height: auto;
   z-index: 2;
+  top: -7.5rem;
+  width: 12.5rem;
+}
+@media screen and (min-width: 768px) {
+  .p-cta__wave {
+    top: -28.125rem;
+    width: 28.75rem;
+  }
 }
 
 .p-cta__circle {
@@ -658,23 +686,25 @@ select::-ms-expand {
 .p-cta__title {
   display: flex;
   flex-direction: column;
-  gap: 1.125rem;
+  gap: 0.25rem;
   justify-content: center;
   margin: 0;
   color: #1f3f58;
   font-family: "Shippori Mincho", "Yu Mincho", "YuMincho", serif;
-  font-size: 1.875rem;
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: 0.06em;
   position: relative;
   z-index: 10;
+  font-size: 1.25rem;
 }
 @media screen and (min-width: 768px) {
   .p-cta__title {
+    font-size: 1.875rem;
     flex-direction: row-reverse;
     line-height: 1.25;
     letter-spacing: 0.5rem;
+    gap: 1.125rem;
   }
 }
 
@@ -694,13 +724,19 @@ select::-ms-expand {
 .p-cta__lead {
   color: #1f3f58;
   font-family: "Shippori Mincho", "Yu Mincho", "YuMincho", serif;
-  font-size: 1.1875rem;
   font-weight: 500;
   line-height: 2;
   letter-spacing: 0.01em;
   position: relative;
   z-index: 10;
-  margin-top: 2.5rem;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .p-cta__lead {
+    margin-top: 2.5rem;
+    font-size: 1.1875rem;
+  }
 }
 
 .p-cta__button {
@@ -758,9 +794,9 @@ select::-ms-expand {
   color: #1f3f58;
   font-family: "Shippori Mincho", "Yu Mincho", "YuMincho", serif;
   font-weight: 500;
-  line-height: 1.7;
+  line-height: 2;
   position: relative;
-  z-index: 10;
+  z-index: 30;
   letter-spacing: 0.01em;
   font-size: 0.875rem;
   margin-top: 1.5rem;
@@ -773,7 +809,7 @@ select::-ms-expand {
 }
 
 .p-double {
-  padding-bottom: 5rem;
+  padding-bottom: 2.5rem;
   position: relative;
   overflow-x: clip;
 }
@@ -874,10 +910,9 @@ select::-ms-expand {
 
 .p-double__title {
   margin-top: 1rem;
-  margin-bottom: 0;
   max-width: 100%;
   font-family: "Shippori Mincho", "Yu Mincho", "YuMincho", serif;
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   line-height: 1.7;
@@ -892,20 +927,21 @@ select::-ms-expand {
 }
 
 .p-double__text {
-  margin-top: 1.5rem;
   margin-bottom: 0;
   width: 100%;
   max-width: 27.75rem;
   font-family: "Shippori Mincho", "Yu Mincho", "YuMincho", serif;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.01em;
   line-height: 1.7;
   text-align: left;
   color: #fff;
+  margin-top: 1rem;
 }
 @media screen and (min-width: 768px) {
   .p-double__text {
+    margin-top: 1.5rem;
     font-size: 1.1875rem;
   }
 }
@@ -1013,12 +1049,13 @@ select::-ms-expand {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 3rem;
   position: relative;
   z-index: 10;
+  margin-top: 1.5rem;
 }
 @media screen and (min-width: 1024px) {
   .p-faq__list {
+    margin-top: 3rem;
     max-width: 55.3125rem;
     margin-left: auto;
   }
@@ -1135,6 +1172,8 @@ select::-ms-expand {
   opacity: 0;
   transform: translateY(-0.375rem);
   transition: opacity 0.42s cubic-bezier(0.33, 1, 0.68, 1) 0.04s, transform 0.48s cubic-bezier(0.33, 1, 0.68, 1) 0.02s;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 @media screen and (min-width: 768px) {
   .p-faq__answer {
@@ -1184,12 +1223,14 @@ select::-ms-expand {
 .p-faq__nestedList {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  padding: 1rem 0.5rem 1.25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  gap: 0.25rem;
 }
 @media screen and (min-width: 768px) {
   .p-faq__nestedList {
     padding: 1rem 1rem 1.5rem;
+    gap: 0.75rem;
   }
 }
 
@@ -1220,7 +1261,7 @@ select::-ms-expand {
 .p-feel {
   position: relative;
   padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-bottom: 2.5rem;
   overflow-x: clip;
 }
 @media screen and (min-width: 768px) {
@@ -1299,12 +1340,12 @@ select::-ms-expand {
 .p-feel__img--bottomRight {
   width: 12.5rem;
   margin-top: 1.5rem;
-  margin-left: auto;
   margin-right: -1.25rem;
   aspect-ratio: 215/145;
 }
 @media screen and (min-width: 768px) {
   .p-feel__img--bottomRight {
+    margin-left: auto;
     top: 34.375rem;
     right: 5rem;
     width: 13.4375rem;
@@ -1390,9 +1431,14 @@ select::-ms-expand {
   z-index: 10;
   display: flex;
   align-items: center;
-  min-height: 6.25rem;
   background: #b18c4e;
   overflow-x: clip;
+  min-height: 4rem;
+}
+@media screen and (min-width: 768px) {
+  .p-footer {
+    min-height: 6.25rem;
+  }
 }
 
 .p-footer__content {
@@ -1405,11 +1451,17 @@ select::-ms-expand {
 
 .p-footer__wave {
   position: absolute;
-  top: -11.25rem;
   right: 0rem;
-  width: 18.875rem;
   height: auto;
   z-index: 1;
+  width: 8.125rem;
+  top: -3.5rem;
+}
+@media screen and (min-width: 768px) {
+  .p-footer__wave {
+    width: 18.875rem;
+    top: -11.25rem;
+  }
 }
 
 .p-footer__circle {
@@ -1551,12 +1603,14 @@ select::-ms-expand {
   object-position: center;
   position: relative;
   z-index: 2;
-  border-right-top-radius: 0.9375rem;
+  border-top-right-radius: 0.9375rem;
+  border-top-left-radius: 0.9375rem;
 }
 @media screen and (min-width: 768px) {
   .p-guarantee__media img {
     border-top-left-radius: 0.9375rem;
     border-bottom-left-radius: 0.9375rem;
+    border-top-right-radius: initial;
     min-height: 20.1875rem;
     height: 100%;
   }
@@ -1565,7 +1619,7 @@ select::-ms-expand {
 .p-guarantee__body {
   position: relative;
   flex: 1 1 auto;
-  padding: 2rem 1rem 2rem;
+  padding: 1.5rem 1rem 1.5rem;
 }
 @media screen and (min-width: 768px) {
   .p-guarantee__body {
@@ -1582,7 +1636,7 @@ select::-ms-expand {
   width: fit-content;
   border-radius: 0.9375rem;
   font-family: "Shippori Mincho", "Yu Mincho", "YuMincho", serif;
-  font-size: 1.625rem;
+  font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.25;
   color: #fff;
@@ -1627,7 +1681,7 @@ select::-ms-expand {
 }
 
 .p-guarantee__copy {
-  margin-top: 1.75rem;
+  margin-top: 1rem;
   max-width: 28.75rem;
 }
 @media screen and (min-width: 768px) {
@@ -1765,7 +1819,12 @@ select::-ms-expand {
   position: absolute;
   top: 0;
   right: 0;
-  width: 15.25rem;
+  width: 7.5rem;
+}
+@media screen and (min-width: 768px) {
+  .p-lineup__wave {
+    width: 15.25rem;
+  }
 }
 
 .p-lineup__circle {
@@ -2583,8 +2642,8 @@ select::-ms-expand {
   }
 }
 .p-material {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
   overflow-x: clip;
 }
 @media screen and (min-width: 768px) {
@@ -3172,8 +3231,8 @@ select::-ms-expand {
 }
 
 .p-quality {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 @media screen and (min-width: 768px) {
   .p-quality {
@@ -3288,7 +3347,12 @@ select::-ms-expand {
 }
 
 .p-quality__detail + .p-quality__detail {
-  margin-top: 4.5rem;
+  margin-top: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .p-quality__detail + .p-quality__detail {
+    margin-top: 4.5rem;
+  }
 }
 
 .p-quality__img img {
@@ -3403,7 +3467,13 @@ select::-ms-expand {
 }
 
 .p-quality__4cBadgeEn {
+  font-size: 0.875rem;
   font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  .p-quality__4cBadgeEn {
+    font-size: 1rem;
+  }
 }
 
 .p-quality__4cBadgeJa {

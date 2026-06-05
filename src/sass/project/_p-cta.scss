@@ -1,7 +1,6 @@
 @use "../global" as *;
 
 .p-cta {
-  padding-top: rem(48);
   padding-bottom: rem(48);
   overflow-x: clip;
   position: relative;
@@ -13,11 +12,16 @@
 
 .p-cta__wave {
   position: absolute;
-  top: rem(-450);
   left: 0;
-  width: rem(460);
   height: auto;
   z-index: 2;
+  top: rem(-120);
+  width: rem(200);
+  @include mq(md){
+    top: rem(-450);
+    width: rem(460);
+    
+  }
 }
 .p-cta__circle {
   position: absolute;
@@ -39,22 +43,24 @@
 .p-cta__title {
   display: flex;
   flex-direction: column;
-  gap: rem(18);
+  gap: rem(4);
   justify-content: center;
   margin: 0;
   color: #1f3f58;
   font-family: $base-font-family;
-  font-size: rem(30);
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: 0.06em;
   position: relative;
   z-index: 10;
-
+  font-size: rem(20);
+  
   @include mq(md) {
+    font-size: rem(30);
     flex-direction: row-reverse;
     line-height: 1.25;
     letter-spacing: rem(8);
+    gap: rem(18);
   }
 }
 
@@ -73,13 +79,18 @@
 .p-cta__lead {
   color: #1f3f58;
   font-family: $base-font-family;
-  font-size: rem(19);
   font-weight: 500;
   line-height: 2;
   letter-spacing: 0.01em;
   position: relative;
   z-index: 10;
-  margin-top: rem(40);
+  font-size: rem(16);
+  margin-top: rem(24);
+  @include mq(md){
+    margin-top: rem(40);
+    font-size: rem(19);
+    
+  }
 }
 
 .p-cta__button {
@@ -137,9 +148,9 @@
   color: #1f3f58;
   font-family: $base-font-family;
   font-weight: 500;
-  line-height: 1.7;
+  line-height: 2;
   position: relative;
-  z-index: 10;
+  z-index: 30;
   letter-spacing: 0.01em;
   font-size: rem(14);
   margin-top: rem(24);

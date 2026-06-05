@@ -67,11 +67,13 @@
   object-position: center;
   position: relative;
   z-index: 2;
-  border-right-top-radius: rem(15);
+  border-top-right-radius: rem(15);
+  border-top-left-radius: rem(15);
 
   @include mq(md) {
     border-top-left-radius: rem(15);
     border-bottom-left-radius: rem(15);
+    border-top-right-radius: initial;
     min-height: rem(323);
     height: 100%;
 
@@ -81,7 +83,7 @@
 .p-guarantee__body {
   position: relative;
   flex: 1 1 auto;
-  padding: rem(32) rem(16) rem(32);
+  padding: rem(24) rem(16) rem(24);
 
   @include mq(md) {
     padding: rem(40) rem(24) rem(40) rem(40);
@@ -97,7 +99,7 @@
   width: fit-content;
   border-radius: rem(15);
   font-family: $base-font-family;
-  font-size: rem(26);
+  font-size: rem(20);
   font-weight: 700;
   line-height: 1.25;
   color: #fff;
@@ -139,7 +141,7 @@
 }
 
 .p-guarantee__copy {
-  margin-top: rem(28);
+  margin-top: rem(16);
   max-width: rem(460);
 
   @include mq(md) {

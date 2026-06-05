@@ -1,8 +1,8 @@
 @use "../global" as *;
 
 .p-quality {
-  padding-top: rem(80);
-  padding-bottom: rem(80);
+  padding-top: rem(40);
+  padding-bottom: rem(40);
 
   @include mq(md) {
     padding-top: rem(120);
@@ -110,7 +110,10 @@
 }
 
 .p-quality__detail+.p-quality__detail {
-  margin-top: rem(72);
+  margin-top: rem(24);
+  @include mq(md){
+    margin-top: rem(72);
+  }
 }
 
 .p-quality__img {
@@ -225,7 +228,11 @@
 }
 
 .p-quality__4cBadgeEn {
+  font-size: rem(14);
   font-weight: 700;
+  @include mq(md){
+    font-size: rem(16);
+  }
 }
 
 .p-quality__4cBadgeJa {

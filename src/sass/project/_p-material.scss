@@ -1,8 +1,8 @@
 @use "../global" as *;
 
 .p-material {
-  padding-top: rem(80);
-  padding-bottom: rem(80);
+  padding-top: rem(40);
+  padding-bottom: rem(40);
   overflow-x: clip;
 
   @include mq(md) {

@@ -12,23 +12,36 @@
     padding-bottom: rem(100);
   }
 }
+
 .p-column__wave {
   position: absolute;
   z-index: 2;
-  top: rem(500);
   left: rem(-96);
-  width: rem(990);
+  width: rem(400);
+  top: rem(120);
   height: auto;
   aspect-ratio: 990 / 1596;
   object-fit: cover;
   object-fit: cover;
   object-position: center;
+
+  @include mq(md) {
+    width: rem(990);
+    top: rem(500);
+
+  }
 }
 
 .p-column .l-wide-inner {
   position: relative;
-  padding-top: rem(168);
-  padding-bottom: rem(128);
+  padding-top: rem(56);
+  padding-bottom: rem(56);
+
+  @include mq(md) {
+    padding-top: rem(168);
+    padding-bottom: rem(128);
+
+  }
 }
 
 .p-column .l-wide-inner::before {
@@ -62,7 +75,12 @@
 }
 
 .p-column__row+.p-column__row {
-  margin-top: rem(88);
+  margin-top: rem(40);
+
+  @include mq(md) {
+
+    margin-top: rem(88);
+  }
 }
 
 .p-column__row--reverse {
@@ -169,6 +187,7 @@
 .p-column__row-titleWrapper {
   position: relative;
 }
+
 .p-column__row-title-icon {
   position: absolute;
   width: rem(52);
@@ -177,12 +196,14 @@
   right: rem(-40);
   bottom: rem(-32);
 }
+
 .p-column__row-title-icon svg {
   width: rem(52);
   height: auto;
   aspect-ratio: 52 / 52;
   object-fit: cover;
 }
+
 .p-column__row-title {
   font-family: $base-font-family;
   font-size: rem(20);

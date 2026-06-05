@@ -1,8 +1,7 @@
 @use "../global" as *;
 
 .p-about {
-  padding-top: rem(80);
-  padding-bottom: rem(80);
+  padding-bottom: rem(40);
   overflow-x: clip;
 
   @include mq(md) {
@@ -17,9 +16,15 @@
 }
 .p-about__wave {
   position: absolute;
-  top: rem(360);
-  width: rem(1038);
-  left: rem(400);
+  top: rem(120);
+  width: rem(440);
+  left: rem(32);
+  @include mq(md){
+    top: rem(360);
+    width: rem(1038);
+    left: rem(400);
+    
+  }
 }
 .p-about__head {
   display: flex;

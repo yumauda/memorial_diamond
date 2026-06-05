@@ -15,7 +15,11 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: rem(244);
+  width: rem(120);
+  @include mq(md){
+    width: rem(244);
+    
+  }
 }
 .p-lineup__circle {
   position: absolute;
