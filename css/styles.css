@@ -2862,10 +2862,11 @@ select::-ms-expand {
 .p-mv__title {
   margin-top: 1.5rem;
   font-family: "Shippori Mincho", "Yu Mincho", "YuMincho", serif;
-  font-size: 2.125rem;
+  font-size: 1.875rem;
   font-weight: 600;
   line-height: 1.4;
   letter-spacing: 0.04em;
+  color: #1f3f58;
 }
 @media screen and (min-width: 768px) {
   .p-mv__title {
@@ -2875,16 +2876,22 @@ select::-ms-expand {
   }
 }
 
+.p-mv__title-small {
+  font-size: 1.5625rem;
+}
 @media screen and (min-width: 768px) {
   .p-mv__title-small {
     font-size: 2.1875rem;
   }
 }
 
+.p-mv__title-shine {
+  font-size: 2.375rem;
+  color: #B18C4E;
+}
 @media screen and (min-width: 768px) {
   .p-mv__title-shine {
     font-size: 3.125rem;
-    color: #B18C4E;
   }
 }
 
