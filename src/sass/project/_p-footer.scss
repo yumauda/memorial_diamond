@@ -15,23 +15,32 @@
   }
 }
 
+.p-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: #b18c4e;
+  pointer-events: none;
+}
+
 .p-footer__content {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: 3;
 }
 
 .p-footer__wave {
   position: absolute;
-  right: rem(0);
   height: auto;
   z-index: 1;
   width: rem(130);
-  top: rem(-56);
-
+  top: rem(-72);
+  right: rem(-56);
+  
   @include mq(md) {
+    right: rem(0);
     width: rem(302);
     top: rem(-180);
 
@@ -40,16 +49,18 @@
 
 .p-footer__circle {
   position: absolute;
-  top: rem(-150);
+  top: rem(-120);
   right: 0;
   width: rem(85);
-  z-index: 2;
+  z-index: 1;
 }
 
 .p-footer__logo {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 3;
   margin-left: auto;
   margin-right: auto;
   width: rem(160);

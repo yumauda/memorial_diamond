@@ -15,14 +15,19 @@
 .p-feel svg {
   position: absolute;
   z-index: 2;
-  top: rem(148);
   left: rem(-25);
-  width: rem(225);
   height: auto;
   aspect-ratio: 225 / 1196;
   object-fit: cover;
   object-fit: cover;
   object-position: center;
+  top: rem(40);
+  width: rem(120);
+  @include mq(md){
+    top: rem(148);
+    width: rem(225);
+    
+  }
 }
 
 

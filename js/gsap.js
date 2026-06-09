@@ -8,8 +8,7 @@ var webStorage = function () {
       display: "none",
     });
     gsap.set(".p-loading__logo", {
-      opacity: 1,
-      filter: "blur(0px)",
+      display: "none",
     });
     gsap.set(".js-mv-img", {
       opacity: 1,
@@ -425,6 +424,28 @@ columnTitleIcons.forEach((icon) => {
         start: 'top bottom',
         end: 'bottom top',
         scrub: 2,
+      },
+    }
+  );
+});
+
+let processLines = document.querySelectorAll('.js-process-line');
+
+processLines.forEach((processLine) => {
+  gsap.fromTo(
+    processLine,
+    {
+      "--width": '0vw',
+    },
+    {
+      "--width": '100vw',
+      duration: 1,
+      ease: 'power2.inOut',
+      scrollTrigger: {
+        trigger: processLine,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 0.5,
       },
     }
   );
