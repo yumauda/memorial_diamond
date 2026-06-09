@@ -369,7 +369,7 @@ parallaxImgs.forEach((parallaxImg) => {
   gsap.fromTo(
     parallaxImg.querySelector('img'),
     {
-      y: -60,
+      y: -25,
     },
     {
       y: 0,

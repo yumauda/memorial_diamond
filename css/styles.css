@@ -3573,5 +3573,5 @@ select::-ms-expand {
 }
 
 .js-parallax img {
-  height: calc(100% + 60px);
+  height: calc(100% + 25px);
 }
