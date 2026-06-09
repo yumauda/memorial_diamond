@@ -3,7 +3,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 var webStorage = function () {
-  if (sessionStorage.getItem('access')) {
+  var hasAccess = false;
+
+  try {
+    hasAccess = Boolean(sessionStorage.getItem('access'));
+  } catch (e) {
+    hasAccess = false;
+  }
+
+  if (hasAccess) {
     gsap.set(".p-loading", {
       display: "none",
     });
@@ -21,7 +29,11 @@ var webStorage = function () {
     });
 
   } else {
-    sessionStorage.setItem('access', 0);
+    try {
+      sessionStorage.setItem('access', '1');
+    } catch (e) {
+      // Safariの設定やプライベートブラウズでsessionStorageが使えない場合も、ローディングは進める。
+    }
 
     const opening = gsap.timeline();
     const mvSplitTexts = document.querySelectorAll('.js-mv-splitText');
@@ -58,6 +70,11 @@ var webStorage = function () {
       opacity: 0,
       duration: 1.0,
       ease: 'power2.inOut',
+      onComplete: function () {
+        gsap.set(".p-loading", {
+          display: "none",
+        });
+      },
     });
 
     opening.to(".js-mv-img", {
