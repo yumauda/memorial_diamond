@@ -1836,11 +1836,12 @@ select::-ms-expand {
 .p-lineup__wave {
   position: absolute;
   top: 0;
-  right: 0;
   width: 7.5rem;
+  right: -4.5rem;
 }
 @media screen and (min-width: 768px) {
   .p-lineup__wave {
+    right: 0;
     width: 15.25rem;
   }
 }
@@ -2392,7 +2393,7 @@ select::-ms-expand {
   gap: 0.4375rem;
   width: min(100%, 20rem);
   min-height: 4.0625rem;
-  margin: 3rem auto 0;
+  margin: 0.75rem auto 0;
   padding: 1.125rem 2rem;
   border-radius: 0.125rem;
   background: #b18c4e;

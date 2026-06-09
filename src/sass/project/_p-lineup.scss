@@ -14,9 +14,10 @@
 .p-lineup__wave {
   position: absolute;
   top: 0;
-  right: 0;
   width: rem(120);
+  right: rem(-72);
   @include mq(md){
+    right: 0;
     width: rem(244);
     
   }
@@ -562,7 +563,7 @@
   gap: rem(7);
   width: min(100%, rem(320));
   min-height: rem(65);
-  margin: rem(48) auto 0;
+  margin: rem(12) auto 0;
   padding: rem(18) rem(32);
   border-radius: rem(2);
   background: #b18c4e;
