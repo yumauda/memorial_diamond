@@ -1,0 +1,33 @@
+@use "../global" as *;
+
+.p-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #F7F6F4;
+  z-index: 9999;
+  opacity: 1;
+}
+.p-loading .l-inner {
+  height: inherit;
+}
+
+.p-loading__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+}
+
+.p-loading__logo {
+  width: rem(220);
+  height: auto;
+  opacity: 0;
+  filter: blur(7px);
+  @include mq(md){
+    
+    width: rem(400);
+  }
+}

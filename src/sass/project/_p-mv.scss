@@ -14,6 +14,7 @@
   margin-right: calc(50% - 50vw);
   margin-left: calc(50% - 50vw);
   width: 100vw;
+  opacity: 0;
 }
 
 .p-mv__img img {
@@ -62,10 +63,12 @@
 .p-mv__title {
   margin-top: rem(24);
   font-family: $base-font-family;
-  font-size: rem(34);
+  font-size: rem(30);
   font-weight: 600;
   line-height: 1.4;
   letter-spacing: 0.04em;
+  color: #1f3f58;
+  opacity: 0;
 
   @include mq(md) {
     margin-top: rem(40);
@@ -74,15 +77,17 @@
   }
 }
 .p-mv__title-small {
+  font-size: rem(25);
+
   @include mq(md){
     font-size: rem(35);
-    
   }
 }
 .p-mv__title-shine {
+  font-size: rem(38);
+
   @include mq(md){
    font-size: rem(50); 
-   color: #B18C4E;
   }
 }
 

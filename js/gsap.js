@@ -1,31 +1,126 @@
 gsap.registerPlugin(ScrollTrigger);
 
-const opening = gsap.timeline();
 
-opening.fromTo(".js-mv-img", {
-  opacity: 0,
-  filter: "blur(10px)",
-}, {
-  filter: "blur(0px)",
-  opacity: 1,
-  stagger: 0.2,
-  ease: "power2.inOut",
-  duration: 1.0,
-});
-opening.fromTo(".js-header", {
-  opacity: 0,
-  y: -100,
-}, {
-  opacity: 1,
-  y: 0,
-  ease: 'power2.inOut',
-  duration: 1.0,
-},"-=0.8");
+
+var webStorage = function () {
+  if (sessionStorage.getItem('access')) {
+    gsap.set(".p-loading", {
+      display: "none",
+    });
+    gsap.set(".p-loading__logo", {
+      opacity: 1,
+      filter: "blur(0px)",
+    });
+    gsap.set(".js-mv-img", {
+      opacity: 1,
+    });
+    gsap.set(".js-mv-text", {
+      opacity: 1,
+    });
+    gsap.set(".js-mv-text--color", {
+      color: '#B18C4E',
+    });
+
+  } else {
+    sessionStorage.setItem('access', 0);
+
+    const opening = gsap.timeline();
+    const mvSplitTexts = document.querySelectorAll('.js-mv-splitText');
+
+    mvSplitTexts.forEach((mvSplitText) => {
+      const text = mvSplitText.textContent.trim();
+      mvSplitText.setAttribute('aria-label', text);
+      mvSplitText.textContent = '';
+
+      Array.from(text).forEach((char) => {
+        if (char === ' ') {
+          mvSplitText.appendChild(document.createTextNode(' '));
+          return;
+        }
+
+        const span = document.createElement('span');
+        span.className = 'js-mv-splitText-char';
+        span.setAttribute('aria-hidden', 'true');
+        span.style.display = 'inline-block';
+        span.textContent = char;
+        mvSplitText.appendChild(span);
+      });
+    });
+
+    // 最初にロゴの丸のみがふわっと
+
+    opening.to(".p-loading__logo", {
+      opacity: 1,
+      filter: "blur(0px)",
+      duration: 1.0,
+      ease: 'power2.inOut',
+    });
+    opening.to(".p-loading", {
+      opacity: 0,
+      duration: 1.0,
+      ease: 'power2.inOut',
+    });
+
+    opening.to(".js-mv-img", {
+      opacity: 1,
+      duration: 1.0,
+      ease: 'power2.inOut',
+    });
+    opening.to(".js-mv-text", {
+      opacity: 1,
+      duration: 1.0,
+      ease: 'power2.inOut',
+    }, "-=0.2");
+    opening.to(".js-mv-text--color", {
+      duration: 1.0,
+      ease: 'power2.inOut',
+      color: '#B18C4E',
+    });
+    opening.addLabel('mvSplitText');
+    mvSplitTexts.forEach((mvSplitText, index) => {
+      opening.fromTo(
+        mvSplitText.querySelectorAll('.js-mv-splitText-char'),
+        {
+          opacity: 0,
+          y: 4,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.45,
+          ease: 'power2.out',
+          stagger: 0.035,
+          delay: index * 0.15,
+        },
+        'mvSplitText'
+      );
+    });
+    opening.fromTo(".js-mv-buttons", {
+      opacity: 0,
+    }, {
+      opacity: 1,
+      duration: 1.0,
+      ease: 'power2.inOut',
+    }, "-=0.8");
+
+    opening.fromTo(".js-header", {
+      opacity: 0,
+      y: -100,
+    }, {
+      opacity: 1,
+      y: 0,
+      ease: 'power2.inOut',
+      duration: 1.0,
+    }, "-=0.8");
+
+  }
+}
+webStorage();
 
 let bgWaves = document.querySelectorAll('.js-wave');
 
 bgWaves.forEach((bgWave) => {
-  gsap.fromTo(  
+  gsap.fromTo(
     bgWave,
     {
       opacity: 0,
@@ -46,7 +141,7 @@ bgWaves.forEach((bgWave) => {
 let bgWaves2 = document.querySelectorAll('.js-wave2');
 
 bgWaves2.forEach((bgWave2) => {
-  gsap.fromTo(  
+  gsap.fromTo(
     bgWave2,
     {
       opacity: 0,

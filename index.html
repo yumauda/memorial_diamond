@@ -54,21 +54,39 @@
   
   </header>
   <main>
+    <div class="p-loading">
+      <div class="l-inner">
+        <div class="p-loading__content">
+          <div class="p-loading__logo">
+            <svg viewBox="0 0 240 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <rect width="240" height="30" fill="url(#pattern0_2204_110)"/>
+              <defs>
+              <pattern id="pattern0_2204_110" patternContentUnits="objectBoundingBox" width="1" height="1">
+              <use xlink:href="#image0_2204_110" transform="matrix(0.00147059 0 0 0.0117647 -0.00294118 0)"/>
+              </pattern>
+              <image id="image0_2204_110" width="684" height="85" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
+              </defs>
+            </svg>
+              
+          </div>
+        </div>
+      </div>
+    </div>
     <section class="p-mv">
       <div class="l-inner">
         <div class="p-mv__content">
-          <figure class="p-mv__img">
+          <figure class="p-mv__img js-mv-img">
             <img decoding="async" loading="lazy" src="./images/common/mv.webp" alt="" width="1200" height="475">
           </figure>
           <div class="p-mv__detail">
           
-            <h1 class="p-mv__title">
+            <h1 class="p-mv__title js-mv-text">
               大切<span class="p-mv__title-small">な</span>想い<span class="p-mv__title-small">を</span>、<br>
-              永遠<span class="p-mv__title-small">の</span><span class="p-mv__title-shine">輝き</span>へ。
+              永遠<span class="p-mv__title-small">の</span><span class="p-mv__title-shine js-mv-text--color">輝き</span>へ。
             </h1>
-            <p class="p-mv__subtitle">Turn your cherished feelings into an eternal radiance.</p>
-            <p class="p-mv__lead">遺骨・毛髪から生まれるメモリアルダイヤモンド</p>
-            <div class="p-mv__buttons">
+            <p class="p-mv__subtitle js-mv-splitText">Turn your cherished feelings into an eternal radiance.</p>
+            <p class="p-mv__lead js-mv-splitText">遺骨・毛髪から生まれるメモリアルダイヤモンド</p>
+            <div class="p-mv__buttons js-mv-buttons">
               <a class="p-mv__btn p-mv__btn--outline" href="#download">
                 <span class="p-mv__btn-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
