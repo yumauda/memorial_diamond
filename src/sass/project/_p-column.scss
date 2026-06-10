@@ -179,6 +179,7 @@
   @include mq(md) {
     order: 0;
     flex-direction: row;
+    gap: rem(4);
     margin-right: rem(54);
   }
 }
@@ -186,6 +187,10 @@
 
 .p-column__row-titleWrapper {
   position: relative;
+
+  @include mq(md) {
+    flex: 0 0 rem(38);
+  }
 }
 
 .p-column__row-title-icon {
@@ -213,9 +218,11 @@
 
   @include mq(md) {
     writing-mode: vertical-rl;
+    text-orientation: upright;
     font-size: rem(25);
     letter-spacing: 0.25em;
     line-height: 1;
+    inline-size: max-content;
   }
 }
 
@@ -231,7 +238,10 @@
   @include mq(md) {
     writing-mode: vertical-rl;
     margin-top: 0;
-    margin-left: rem(12);
+    margin-left: 0;
     font-size: rem(10);
+    line-height: 1;
+    flex: 0 0 rem(14);
+    inline-size: max-content;
   }
 }

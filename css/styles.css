@@ -580,12 +580,18 @@ select::-ms-expand {
   .p-column__row-titleWrap {
     order: 0;
     flex-direction: row;
+    gap: 0.25rem;
     margin-right: 3.375rem;
   }
 }
 
 .p-column__row-titleWrapper {
   position: relative;
+}
+@media screen and (min-width: 768px) {
+  .p-column__row-titleWrapper {
+    flex: 0 0 2.375rem;
+  }
 }
 
 .p-column__row-title-icon {
@@ -614,9 +620,11 @@ select::-ms-expand {
 @media screen and (min-width: 768px) {
   .p-column__row-title {
     writing-mode: vertical-rl;
+    text-orientation: upright;
     font-size: 1.5625rem;
     letter-spacing: 0.25em;
     line-height: 1;
+    inline-size: max-content;
   }
 }
 
@@ -633,8 +641,11 @@ select::-ms-expand {
   .p-column__row-subtitle {
     writing-mode: vertical-rl;
     margin-top: 0;
-    margin-left: 0.75rem;
+    margin-left: 0;
     font-size: 0.625rem;
+    line-height: 1;
+    flex: 0 0 0.875rem;
+    inline-size: max-content;
   }
 }
 
