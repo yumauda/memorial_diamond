@@ -119,6 +119,7 @@
 
   @include mq(md) {
     flex-direction: row;
+    gap: rem(12);
     flex: 1 1 auto;
     margin-top: 0;
     margin-left: rem(40);
