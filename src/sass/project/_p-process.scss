@@ -191,6 +191,8 @@
   @include mq(md) {
     font-size: rem(25);
     letter-spacing: 0.06em;
+    font-size: min(rem(25), calc(25 / 1440) * 100vw);
+
   }
 }
 

@@ -3259,6 +3259,7 @@ select::-ms-expand {
   .p-process__itemTitle {
     font-size: 1.5625rem;
     letter-spacing: 0.06em;
+    font-size: min(1.5625rem, 1.7361111111vw);
   }
 }
 
