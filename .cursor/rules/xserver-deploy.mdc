@@ -1,5 +1,5 @@
 ---
-description: Xserver test deployment rules for static HTML / PHP sites
+description: 「テストアップして」と依頼された時に使う Xserver テスト環境へのデプロイルール
 globs:
   - "**/*"
 alwaysApply: false
