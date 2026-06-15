@@ -98,7 +98,7 @@
 
 .p-feel__title {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
   margin-top: rem(40);
@@ -108,7 +108,6 @@
   letter-spacing: 0.06em;
 
   @include mq(md) {
-    flex-direction: row-reverse;
     align-items: flex-start;
     margin-top: rem(60);
   }
@@ -121,9 +120,9 @@
   line-height: 1.7;
   letter-spacing: 0.06em;
   text-align: center;
+  writing-mode: vertical-rl;
 
   @include mq(md) {
-    writing-mode: vertical-rl;
     font-feature-settings: "vpal";
     line-height: 1.25;
     letter-spacing: 0.3em;

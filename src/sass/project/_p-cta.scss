@@ -42,7 +42,6 @@
 
 .p-cta__title {
   display: flex;
-  flex-direction: column;
   gap: rem(4);
   justify-content: center;
   margin: 0;
@@ -55,9 +54,9 @@
   z-index: 10;
   font-size: rem(20);
   
+  flex-direction: row-reverse;
   @include mq(md) {
     font-size: rem(30);
-    flex-direction: row-reverse;
     line-height: 1.25;
     letter-spacing: rem(8);
     gap: rem(18);
@@ -66,13 +65,13 @@
 
 .p-cta__title span {
   display: block;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-feature-settings: "vert" 1;
 
   @include mq(md) {
     width: rem(27);
     min-height: rem(266);
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    font-feature-settings: "vert" 1;
   }
 }
 

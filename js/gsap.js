@@ -394,7 +394,7 @@ opacityImgs.forEach((opacityImg) => {
     },
     {
       opacity: 1,
-      duration: 1,
+      duration: 1.9,
       ease: 'power2.inOut',
       scrollTrigger: {
         trigger: opacityImg,
@@ -414,7 +414,7 @@ opacityDelays.forEach((opacityDelay) => {
     },
     {
       opacity: 1,
-      duration: 1,
+      duration: 1.3,
       ease: 'power2.inOut',
       scrollTrigger: {
         trigger: opacityDelay,

@@ -697,7 +697,6 @@ select::-ms-expand {
 
 .p-cta__title {
   display: flex;
-  flex-direction: column;
   gap: 0.25rem;
   justify-content: center;
   margin: 0;
@@ -709,11 +708,11 @@ select::-ms-expand {
   position: relative;
   z-index: 10;
   font-size: 1.25rem;
+  flex-direction: row-reverse;
 }
 @media screen and (min-width: 768px) {
   .p-cta__title {
     font-size: 1.875rem;
-    flex-direction: row-reverse;
     line-height: 1.25;
     letter-spacing: 0.5rem;
     gap: 1.125rem;
@@ -722,14 +721,14 @@ select::-ms-expand {
 
 .p-cta__title span {
   display: block;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-feature-settings: "vert" 1;
 }
 @media screen and (min-width: 768px) {
   .p-cta__title span {
     width: 1.6875rem;
     min-height: 16.625rem;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    font-feature-settings: "vert" 1;
   }
 }
 
@@ -1373,7 +1372,7 @@ select::-ms-expand {
 
 .p-feel__title {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
   margin-top: 2.5rem;
@@ -1384,7 +1383,6 @@ select::-ms-expand {
 }
 @media screen and (min-width: 768px) {
   .p-feel__title {
-    flex-direction: row-reverse;
     align-items: flex-start;
     margin-top: 3.75rem;
   }
@@ -1397,10 +1395,10 @@ select::-ms-expand {
   line-height: 1.7;
   letter-spacing: 0.06em;
   text-align: center;
+  writing-mode: vertical-rl;
 }
 @media screen and (min-width: 768px) {
   .p-feel__title-row {
-    writing-mode: vertical-rl;
     font-feature-settings: "vpal";
     line-height: 1.25;
     letter-spacing: 0.3em;
