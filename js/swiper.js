@@ -314,7 +314,6 @@ if (document.querySelector(".js-top-interview-swiper")) {
 	      const isRing = category === 'ring';
 	      const isPendant = category === 'pendant';
 	      const rows = {
-	        type: $lineupModal.find('[data-modal-row="type"]'),
 	        number: $lineupModal.find('[data-modal-row="number"]'),
 	        color: $lineupModal.find('[data-modal-row="color"]'),
 	        size: $lineupModal.find('[data-modal-row="size"]'),
@@ -322,14 +321,11 @@ if (document.querySelector(".js-top-interview-swiper")) {
 	      };
 
 	      $lineupModal.find('.js-lineup-modal-title').text(item.title || '');
-	      $lineupModal.find('.js-lineup-modal-type-label').text('種類');
-	      $lineupModal.find('.js-lineup-modal-type').text(isPendant ? 'ネックレス' : (item.type || ''));
 	      $lineupModal.find('.js-lineup-modal-number').text(item.number || '');
 	      $lineupModal.find('.js-lineup-modal-color').text(item.color || 'プラチナ');
 	      $lineupModal.find('.js-lineup-modal-size').text(item.size || '');
 	      $lineupModal.find('.js-lineup-modal-chain').text(item.chain || '4種類から選択可能');
 
-	      rows.type.prop('hidden', isRing);
 	      rows.number.prop('hidden', false);
 	      rows.color.prop('hidden', false);
 	      rows.size.prop('hidden', false);
@@ -370,7 +366,7 @@ if (document.querySelector(".js-top-interview-swiper")) {
       const $wrap = $root.closest('.p-lineup__sliderWrap');
       const $scope = $wrap.length ? $wrap : $root;
       lineupSwipers[key] = new Swiper($root[0], {
-        slidesPerView: 1.2,
+        slidesPerView: 2.2,
         spaceBetween: 16,
         loop: true,
         watchOverflow: false,
@@ -384,7 +380,7 @@ if (document.querySelector(".js-top-interview-swiper")) {
         },
         breakpoints: {
           768: {
-            slidesPerView: 2,
+            slidesPerView: 3.2,
             spaceBetween: 18,
           },
           1024: {
