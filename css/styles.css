@@ -1474,17 +1474,16 @@ select::-ms-expand {
 }
 
 .p-footer__wave {
-  position: absolute;
-  height: auto;
-  z-index: 1;
-  width: 8.125rem;
-  top: -4.5rem;
-  right: -3.5rem;
+  display: none;
 }
 @media screen and (min-width: 768px) {
   .p-footer__wave {
+    display: block;
+    z-index: 1;
+    position: absolute;
     right: 0rem;
     width: 18.875rem;
+    height: auto;
     top: -11.25rem;
   }
 }
@@ -2058,7 +2057,8 @@ select::-ms-expand {
 }
 
 .p-lineup__priceTable {
-  width: 67.5rem;
+  width: 100%;
+  min-width: 59.375rem;
   margin-left: auto;
   margin-right: auto;
   border-collapse: collapse;
@@ -2639,6 +2639,10 @@ select::-ms-expand {
   gap: 1.25rem;
   padding: 1.125rem 0;
   border-bottom: 1px solid rgba(31, 63, 88, 0.14);
+}
+
+.p-lineup__modalSpec div[hidden] {
+  display: none;
 }
 
 .p-lineup__modalSpec dt,

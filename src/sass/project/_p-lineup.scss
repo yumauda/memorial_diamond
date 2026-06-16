@@ -212,7 +212,8 @@
 }
 
 .p-lineup__priceTable {
-  width: rem(1080);
+  width: 100%;
+  min-width: rem(950);
   margin-left: auto;
   margin-right: auto;
   border-collapse: collapse;
@@ -801,6 +802,10 @@
   gap: rem(20);
   padding: rem(18) 0;
   border-bottom: 1px solid rgba(31, 63, 88, 0.14);
+}
+
+.p-lineup__modalSpec div[hidden] {
+  display: none;
 }
 
 .p-lineup__modalSpec dt,

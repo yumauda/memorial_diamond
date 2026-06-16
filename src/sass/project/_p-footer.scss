@@ -32,16 +32,14 @@
 }
 
 .p-footer__wave {
-  position: absolute;
-  height: auto;
-  z-index: 1;
-  width: rem(130);
-  top: rem(-72);
-  right: rem(-56);
-  
+  display: none;
   @include mq(md) {
+    display: block;
+    z-index: 1;
+    position: absolute;
     right: rem(0);
     width: rem(302);
+    height: auto;
     top: rem(-180);
 
   }
