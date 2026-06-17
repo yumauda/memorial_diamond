@@ -2893,7 +2893,7 @@ select::-ms-expand {
 }
 @media screen and (min-width: 768px) {
   .p-mv__img img {
-    aspect-ratio: 1440/750;
+    aspect-ratio: 4096/2000;
     object-position: center;
   }
 }

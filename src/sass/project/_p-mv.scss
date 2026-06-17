@@ -25,7 +25,7 @@
   object-position: 90%;
 
   @include mq(md) {
-    aspect-ratio: 1440 / 750;
+    aspect-ratio: 4096 / 2000;
     object-position: center;
   }
 }

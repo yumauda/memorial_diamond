@@ -1,11 +1,15 @@
 import imagemin from 'imagemin';
-import imageminMozjpeg from 'imagemin-mozjpeg';
 import imageminPngquant from 'imagemin-pngquant';
 import imageminSvgo from 'imagemin-svgo';
 import imageminWebp from 'imagemin-webp';
+import mozjpeg from 'mozjpeg';
 import { glob } from 'glob';
 import path from 'path';
 import fs from 'fs/promises';
+import { execFile } from 'child_process';
+import { promisify } from 'util';
+
+const execFileAsync = promisify(execFile);
 
 async function compressImages() {
   const srcRoot = path.resolve('src/images');
@@ -50,10 +54,7 @@ async function compressImages() {
     await fs.mkdir(outDir, { recursive: true });
 
     if (ext === '.jpg' || ext === '.jpeg') {
-      await imagemin([file], {
-        destination: outDir,
-        plugins: [imageminMozjpeg({ quality: 80 })]
-      });
+      await execFileAsync(mozjpeg, ['-quality', '80', '-outfile', outFile, file]);
     } else if (ext === '.png') {
       await imagemin([file], {
         destination: outDir,
