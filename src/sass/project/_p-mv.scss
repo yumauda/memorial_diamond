@@ -76,18 +76,20 @@
     line-height: 1.45;
   }
 }
+
 .p-mv__title-small {
   font-size: rem(25);
 
-  @include mq(md){
+  @include mq(md) {
     font-size: rem(35);
   }
 }
+
 .p-mv__title-shine {
   font-size: rem(38);
 
-  @include mq(md){
-   font-size: rem(50); 
+  @include mq(md) {
+    font-size: rem(50);
   }
 }
 
@@ -132,7 +134,7 @@
   }
 }
 
-.p-mv__buttons > * + * {
+.p-mv__buttons>*+* {
   margin-top: rem(12);
 
   @include mq(md) {

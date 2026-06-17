@@ -15,6 +15,12 @@
     let modalMainSwiper = null;
     let modalThumbSwiper = null;
     let modalCloseTimer = null;
+    const chainImage = {
+      src: './images/common/chane.webp',
+      alt: 'チェーン4種類',
+      width: '7008',
+      height: '4672',
+    };
 
     function escapeHtml(str) {
       return String(str)
@@ -48,6 +54,15 @@
       rows.color.prop('hidden', false);
       rows.size.prop('hidden', false);
       rows.chain.prop('hidden', !shouldShowChain);
+    }
+
+    function shouldAppendChainImage(item) {
+      if (!item) return false;
+      const category = item.category || '';
+      const isPendant = category === 'pendant';
+      const isMensChain = category === 'mens' && /^[KM]/.test(item.number || '');
+
+      return isPendant || isMensChain;
     }
 
     function destroyModalSwipers() {
@@ -218,6 +233,21 @@
             chain: $itemBtn.attr('data-chain-spec') || '4種類から選択可能',
             category: $swiperRoot.attr('data-lineup') || '',
           });
+        });
+      }
+
+      if (shouldAppendChainImage(slides[0])) {
+        slides.push({
+          src: chainImage.src,
+          alt: chainImage.alt,
+          width: chainImage.width,
+          height: chainImage.height,
+          title: slides[0].title,
+          number: slides[0].number,
+          color: slides[0].color,
+          size: slides[0].size,
+          chain: slides[0].chain,
+          category: slides[0].category,
         });
       }
 
