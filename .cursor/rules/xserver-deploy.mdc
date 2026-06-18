@@ -8,6 +8,9 @@ alwaysApply: false
 # Xserver Test Deploy
 
 - 「テストアップして」と依頼されたら `npm run deploy:test` を使う。
+- このプロジェクトではテストアップ時に `dist` を作成しない。`npm run build` / `vite build` は実行禁止。
+- アップロード元は既存のルート構成を使う。`index.html`, `css/`, `js/`, `images/`, `fonts/`, `mail.php` など、実際に公開しているファイル構成をそのまま同期する。
+- `.env` の `LOCAL_BUILD_DIR` が `dist` になっていても、そのままビルドして進めない。まず運用に合わせてアップロード元を確認・修正する。
 - 本番環境には勝手にアップロードしない。
 - `.env` や秘密鍵の中身を表示しない。
 - Basic認証は `test / 0000` を使用する。
