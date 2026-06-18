@@ -15,6 +15,7 @@
     let modalMainSwiper = null;
     let modalThumbSwiper = null;
     let modalCloseTimer = null;
+    const chainSpecText = 'プラチナ、イエローゴールド、ピンクゴールド、ホワイトゴールド';
     const chainImage = {
       src: './images/common/chane.webp',
       alt: 'チェーン4種類',
@@ -48,7 +49,7 @@
       $lineupModal.find('.js-lineup-modal-number').text(item.number || '');
       $lineupModal.find('.js-lineup-modal-color').text(item.color || 'プラチナ');
       $lineupModal.find('.js-lineup-modal-size').text(item.size || '');
-      $lineupModal.find('.js-lineup-modal-chain').text(item.chain || '4種類から選択可能');
+      $lineupModal.find('.js-lineup-modal-chain').text(item.chain || chainSpecText);
 
       rows.number.prop('hidden', false);
       rows.color.prop('hidden', false);
@@ -213,7 +214,7 @@
             number: $btn.attr('data-product-number') || '',
             color: $btn.attr('data-product-color') || 'プラチナ',
             size: $btn.attr('data-diamond-size') || '',
-            chain: $btn.attr('data-chain-spec') || '4種類から選択可能',
+            chain: $btn.attr('data-chain-spec') || chainSpecText,
             category: $swiperRoot.attr('data-lineup') || '',
           });
         });
@@ -230,7 +231,7 @@
             number: $itemBtn.attr('data-product-number') || '',
             color: $itemBtn.attr('data-product-color') || 'プラチナ',
             size: $itemBtn.attr('data-diamond-size') || '',
-            chain: $itemBtn.attr('data-chain-spec') || '4種類から選択可能',
+            chain: $itemBtn.attr('data-chain-spec') || chainSpecText,
             category: $swiperRoot.attr('data-lineup') || '',
           });
         });
