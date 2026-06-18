@@ -1923,7 +1923,7 @@ select::-ms-expand {
 }
 
 .p-lineup__looseImage {
-  width: min(100%, 16.25rem);
+  width: 8.75rem;
   margin-left: auto;
   margin-right: auto;
 }
