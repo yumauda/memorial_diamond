@@ -25,8 +25,13 @@
 .p-lineup__circle {
   position: absolute;
   top: rem(220);
-  right: rem(80);
-  width: rem(80);
+  right: rem(32);
+  width: rem(64);
+  @include mq(md){
+    
+    width: rem(80);
+    right: rem(80);
+  }
 }
 .p-lineup__circle-bottom {
   position: absolute;
@@ -224,7 +229,7 @@
 .p-lineup__priceTable th,
 .p-lineup__priceTable td {
   width: rem(130);
-  height: rem(42);
+  height: rem(38);
   border-right: 1px solid #c3aa7f;
   font-size: rem(14);
   font-weight: 500;
@@ -232,6 +237,10 @@
   line-height: 1.7;
   text-align: center;
   white-space: nowrap;
+
+  @include mq(md) {
+    height: rem(42);
+  }
 }
 
 .p-lineup__priceTable th:first-child,

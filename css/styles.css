@@ -1858,8 +1858,14 @@ select::-ms-expand {
 .p-lineup__circle {
   position: absolute;
   top: 13.75rem;
-  right: 5rem;
-  width: 5rem;
+  right: 2rem;
+  width: 4rem;
+}
+@media screen and (min-width: 768px) {
+  .p-lineup__circle {
+    width: 5rem;
+    right: 5rem;
+  }
 }
 
 .p-lineup__circle-bottom {
@@ -2069,7 +2075,7 @@ select::-ms-expand {
 .p-lineup__priceTable th,
 .p-lineup__priceTable td {
   width: 8.125rem;
-  height: 2.625rem;
+  height: 2.375rem;
   border-right: 1px solid #c3aa7f;
   font-size: 0.875rem;
   font-weight: 500;
@@ -2077,6 +2083,12 @@ select::-ms-expand {
   line-height: 1.7;
   text-align: center;
   white-space: nowrap;
+}
+@media screen and (min-width: 768px) {
+  .p-lineup__priceTable th,
+  .p-lineup__priceTable td {
+    height: 2.625rem;
+  }
 }
 
 .p-lineup__priceTable th:first-child,

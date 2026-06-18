@@ -15,7 +15,8 @@
     let modalMainSwiper = null;
     let modalThumbSwiper = null;
     let modalCloseTimer = null;
-    const chainSpecText = 'プラチナ、イエローゴールド、ピンクゴールド、ホワイトゴールド';
+    const productColorText = 'プラチナ/K18YG（イエローゴールド）/K18WG（ホワイトゴールド）/K18PG（ピンクゴールド）';
+    const chainSpecText = 'ベネチアンチェーン/0.7ｍｍ/スライドアジャスター付※長さは変更が可能です。';
     const chainImage = {
       src: './images/common/chane.webp',
       alt: 'チェーン4種類',
@@ -47,7 +48,7 @@
 
       $lineupModal.find('.js-lineup-modal-title').text(item.title || '');
       $lineupModal.find('.js-lineup-modal-number').text(item.number || '');
-      $lineupModal.find('.js-lineup-modal-color').text(item.color || 'プラチナ');
+      $lineupModal.find('.js-lineup-modal-color').text(item.color || productColorText);
       $lineupModal.find('.js-lineup-modal-size').text(item.size || '');
       $lineupModal.find('.js-lineup-modal-chain').text(item.chain || chainSpecText);
 
@@ -212,7 +213,7 @@
             height: '945',
             title: $btn.attr('data-lineup-title') || 'Product detail',
             number: $btn.attr('data-product-number') || '',
-            color: $btn.attr('data-product-color') || 'プラチナ',
+            color: $btn.attr('data-product-color') || productColorText,
             size: $btn.attr('data-diamond-size') || '',
             chain: $btn.attr('data-chain-spec') || chainSpecText,
             category: $swiperRoot.attr('data-lineup') || '',
@@ -229,7 +230,7 @@
             height: el.getAttribute('height') || '420',
             title: $itemBtn.attr('data-lineup-title') || 'Product detail',
             number: $itemBtn.attr('data-product-number') || '',
-            color: $itemBtn.attr('data-product-color') || 'プラチナ',
+            color: $itemBtn.attr('data-product-color') || productColorText,
             size: $itemBtn.attr('data-diamond-size') || '',
             chain: $itemBtn.attr('data-chain-spec') || chainSpecText,
             category: $swiperRoot.attr('data-lineup') || '',
