@@ -17,12 +17,32 @@
     let modalCloseTimer = null;
     const productColorText = 'プラチナ/K18YG（イエローゴールド）/K18WG（ホワイトゴールド）/K18PG（ピンクゴールド）';
     const chainSpecText = 'ベネチアンチェーン/0.7ｍｍ/スライドアジャスター付※長さは変更が可能です。';
-    const chainImage = {
-      src: './images/common/chane.webp',
-      alt: 'チェーン4種類',
-      width: '7008',
-      height: '4672',
-    };
+    const chainImages = [
+      {
+        src: './images/common/chane01.webp',
+        alt: 'チェーン画像 01',
+        width: '1280',
+        height: '1071',
+      },
+      {
+        src: './images/common/chane02.webp',
+        alt: 'チェーン画像 02',
+        width: '1280',
+        height: '1071',
+      },
+      {
+        src: './images/common/chane03.webp',
+        alt: 'チェーン画像 03',
+        width: '1280',
+        height: '1071',
+      },
+      {
+        src: './images/common/chane04.webp',
+        alt: 'チェーン画像 04',
+        width: '1280',
+        height: '1071',
+      },
+    ];
 
     function escapeHtml(str) {
       return String(str)
@@ -239,17 +259,19 @@
       }
 
       if (shouldAppendChainImage(slides[0])) {
-        slides.push({
-          src: chainImage.src,
-          alt: chainImage.alt,
-          width: chainImage.width,
-          height: chainImage.height,
-          title: slides[0].title,
-          number: slides[0].number,
-          color: slides[0].color,
-          size: slides[0].size,
-          chain: slides[0].chain,
-          category: slides[0].category,
+        chainImages.forEach(function (chainImage) {
+          slides.push({
+            src: chainImage.src,
+            alt: chainImage.alt,
+            width: chainImage.width,
+            height: chainImage.height,
+            title: slides[0].title,
+            number: slides[0].number,
+            color: slides[0].color,
+            size: slides[0].size,
+            chain: slides[0].chain,
+            category: slides[0].category,
+          });
         });
       }
 
