@@ -168,7 +168,6 @@ bgWaves2.forEach((bgWave2) => {
       clipPath: "inset(0% 0% 0% 0%)",
       duration: 4,
       ease: 'power2.inOut',
-      zIndex: 1,
       scrollTrigger: {
         trigger: bgWave2,
         start: 'top 90%',

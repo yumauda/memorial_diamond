@@ -55,7 +55,7 @@
   width: 100vw;
   right: calc(50% - 50vw);
   left: calc(50% - 50vw);
-  z-index: 1;
+  z-index: -1;
 }
 
 .p-guarantee__media img {
