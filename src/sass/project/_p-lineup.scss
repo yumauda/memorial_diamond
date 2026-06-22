@@ -279,7 +279,10 @@
   letter-spacing: 0.01em;
   line-height: 1.7;
   color: #536c7f;
-  text-align: right;
+  @include mq(md){
+    text-align: right;
+    
+  }
 }
 
 .p-lineup__lead {
